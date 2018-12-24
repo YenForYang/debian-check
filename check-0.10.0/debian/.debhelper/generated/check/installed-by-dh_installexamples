@@ -1,0 +1,7 @@
+./doc/example/cmake
+./doc/example/CMakeLists.txt
+./doc/example/configure.ac
+./doc/example/Makefile.am
+./doc/example/README
+./doc/example/src
+./doc/example/tests

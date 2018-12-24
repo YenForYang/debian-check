@@ -1,0 +1,1444 @@
+ dpkg-buildpackage -D -us -uc -ui -b -Jauto -Pnobiarch,nocheck,nodoc
+dpkg-buildpackage: info: source package check
+dpkg-buildpackage: info: source version 0.10.0-3
+dpkg-buildpackage: info: source distribution unstable
+dpkg-buildpackage: info: source changed by Tobias Frost <tobi@debian.org>
+ dpkg-source --before-build .
+dpkg-buildpackage: info: host architecture amd64
+ fakeroot debian/rules clean
+dh clean --buildsystem=autoconf --with autoreconf
+   debian/rules override_dh_auto_clean
+make[1]: Entering directory '/dev/shm/check/check-0.10.0'
+dh_auto_clean --builddirectory build-standard
+dh_auto_clean --builddirectory build-pic
+make[1]: Leaving directory '/dev/shm/check/check-0.10.0'
+   dh_autoreconf_clean -O--buildsystem=autoconf
+   dh_clean -O--buildsystem=autoconf
+FAKEROOTKEY=172995197 LD_LIBRARY_PATH=:/opt/intel/lib/intel64_lin:/opt/intel/tbb/lib/intel64/gcc4.7 LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libfakeroot/libfakeroot-sysv.so debian/rules clean
+ debian/rules build
+dh build --buildsystem=autoconf --with autoreconf
+   dh_update_autotools_config -O--buildsystem=autoconf
+   dh_autoreconf -O--buildsystem=autoconf
+libtoolize: putting auxiliary files in AC_CONFIG_AUX_DIR, 'build-aux'.
+libtoolize: copying file 'build-aux/ltmain.sh'
+libtoolize: putting macros in AC_CONFIG_MACRO_DIRS, 'm4'.
+libtoolize: copying file 'm4/libtool.m4'
+libtoolize: copying file 'm4/ltoptions.m4'
+libtoolize: copying file 'm4/ltsugar.m4'
+libtoolize: copying file 'm4/ltversion.m4'
+libtoolize: copying file 'm4/lt~obsolete.m4'
+configure.ac:32: installing 'build-aux/compile'
+configure.ac:26: installing 'build-aux/missing'
+parallel-tests: installing 'build-aux/test-driver'
+lib/Makefile.am: installing 'build-aux/depcomp'
+   debian/rules override_dh_auto_configure
+make[1]: Entering directory '/dev/shm/check/check-0.10.0'
+dh_auto_configure --builddirectory build-standard -- --prefix=/usr \
+	--libdir=\${prefix}/lib/x86_64-linux-gnu \
+	--host=x86_64-linux-gnu \
+	--infodir=/usr/share/info --disable-shared --enable-subunit
+	cd build-standard && ../configure --build=x86_64-linux-gnu --prefix=/usr --includedir=\${prefix}/include --mandir=\${prefix}/share/man --infodir=\${prefix}/share/info --sysconfdir=/etc --localstatedir=/var --disable-silent-rules --libdir=\${prefix}/lib/x86_64-linux-gnu --libexecdir=\${prefix}/lib/x86_64-linux-gnu --disable-maintainer-mode --disable-dependency-tracking --prefix=/usr --libdir=\${prefix}/lib/x86_64-linux-gnu --host=x86_64-linux-gnu --infodir=/usr/share/info --disable-shared --enable-subunit
+configure: WARNING: unrecognized options: --disable-maintainer-mode
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for a thread-safe mkdir -p... /bin/mkdir -p
+checking for gawk... no
+checking for mawk... mawk
+checking whether make sets $(MAKE)... yes
+checking whether make supports nested variables... yes
+checking whether make supports the include directive... yes (GNU style)
+checking for x86_64-linux-gnu-gcc... ccache icc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether ccache icc accepts -g... yes
+checking for ccache icc option to accept ISO C89... none needed
+checking whether ccache icc understands -c and -o together... yes
+checking dependency style of ccache icc... none
+checking how to run the C preprocessor... ccache icc -E
+checking for grep that handles long lines and -e... /bin/grep
+checking for egrep... /bin/grep -E
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking minix/config.h usability... no
+checking minix/config.h presence... no
+checking for minix/config.h... no
+checking whether it is safe to define __EXTENSIONS__... yes
+checking whether make supports nested variables... (cached) yes
+Enabled subunit support
+checking for a sed that does not truncate output... /bin/sed
+checking for gawk... (cached) mawk
+checking for x86_64-linux-gnu-gcc... (cached) ccache icc
+checking whether we are using the GNU C compiler... (cached) yes
+checking whether ccache icc accepts -g... (cached) yes
+checking for ccache icc option to accept ISO C89... (cached) none needed
+checking whether ccache icc understands -c and -o together... (cached) yes
+checking dependency style of ccache icc... (cached) none
+checking whether ln -s works... yes
+checking for x86_64-linux-gnu-ar... xiar
+checking the archiver (xiar) interface... ar
+checking build system type... x86_64-pc-linux-gnu
+checking host system type... x86_64-pc-linux-gnu
+checking how to print strings... printf
+checking for a sed that does not truncate output... (cached) /bin/sed
+checking for fgrep... /bin/grep -F
+checking for ld used by ccache icc... xild
+checking if the linker (xild) is GNU ld... yes
+checking for BSD- or MS-compatible name lister (nm)... /usr/bin/x86_64-linux-gnu-nm -B
+checking the name lister (/usr/bin/x86_64-linux-gnu-nm -B) interface... BSD nm
+checking the maximum length of command line arguments... 1572864
+checking how to convert x86_64-pc-linux-gnu file names to x86_64-pc-linux-gnu format... func_convert_file_noop
+checking how to convert x86_64-pc-linux-gnu file names to toolchain format... func_convert_file_noop
+checking for xild option to reload object files... -r
+checking for x86_64-linux-gnu-objdump... x86_64-linux-gnu-objdump
+checking how to recognize dependent libraries... pass_all
+checking for x86_64-linux-gnu-dlltool... no
+checking for dlltool... no
+checking how to associate runtime and link libraries... printf %s\n
+checking for x86_64-linux-gnu-ar... (cached) xiar
+checking for archiver @FILE support... @
+checking for x86_64-linux-gnu-strip... x86_64-linux-gnu-strip
+checking for x86_64-linux-gnu-ranlib... x86_64-linux-gnu-ranlib
+checking command to parse /usr/bin/x86_64-linux-gnu-nm -B output from ccache icc object... ok
+checking for sysroot... no
+checking for a working dd... /bin/dd
+checking how to truncate binary pipes... /bin/dd bs=4096 count=1
+checking for x86_64-linux-gnu-mt... no
+checking for mt... mt
+checking if mt is a manifest tool... no
+checking for dlfcn.h... yes
+checking for objdir... .libs
+checking if ccache icc supports -fno-rtti -fno-exceptions... yes
+checking for ccache icc option to produce PIC... -fPIC -DPIC
+checking if ccache icc PIC flag -fPIC -DPIC works... yes
+checking if ccache icc static flag -static works... no
+checking if ccache icc supports -c -o file.o... yes
+checking if ccache icc supports -c -o file.o... (cached) yes
+checking whether the ccache icc linker (xild -m elf_x86_64) supports shared libraries... xild: warning #10013: no objects specified for multi-file optimization
+xild: executing 'ld'
+yes
+checking dynamic linker characteristics... GNU/Linux ld.so
+checking how to hardcode library paths into programs... immediate
+checking whether stripping libraries is possible... yes
+checking if libtool supports shared libraries... yes
+checking whether to build shared libraries... no
+checking whether to build static libraries... yes
+checking whether the C compiler accepts the -Wextra flag... yes
+checking whether the C compiler accepts the -Wstrict-prototypes flag... yes
+checking whether the C compiler accepts the -Wmissing-prototypes flag... yes
+checking whether the C compiler accepts the -Wwrite-strings flag... yes
+checking whether the C compiler accepts the -Wno-variadic-macros flag... yes
+checking whether the C compiler accepts the -Wimport flag... yes
+checking whether the C compiler accepts the -Wfatal-errors flag... yes
+checking whether the C compiler accepts the -Wformat=2 flag... yes
+checking whether the C compiler accepts the -Winit-self flag... yes
+checking whether the C compiler accepts the -Wmissing-include-dirs flag... yes
+checking whether the C compiler accepts the -Wswitch-default flag... yes
+checking whether the C compiler accepts the -Wunknown-pragmas flag... yes
+checking for gcov... gcov
+checking for lcov... lcov
+checking for genhtml... genhtml
+checking for tex... tex
+checking for the pthreads library -lpthreads... no
+checking whether pthreads work without any flags... yes
+checking for joinable pthread attribute... PTHREAD_CREATE_JOINABLE
+checking if more special flags are required for pthreads... no
+checking for floor in -lm... yes
+checking for clock_gettime, timer_create, timer_settime, timer_delete in -lrt... yes
+checking for struct timespec.tv_sec... yes
+checking for struct timespec.tv_nsec... yes
+checking for struct itimerspec.it_interval... yes
+checking for struct itimerspec.it_value... yes
+checking for ANSI C header files... (cached) yes
+checking for sys/wait.h that is POSIX.1 compatible... yes
+checking fcntl.h usability... yes
+checking fcntl.h presence... yes
+checking for fcntl.h... yes
+checking stddef.h usability... yes
+checking stddef.h presence... yes
+checking for stddef.h... yes
+checking for stdlib.h... (cached) yes
+checking for string.h... (cached) yes
+checking sys/time.h usability... yes
+checking sys/time.h presence... yes
+checking for sys/time.h... yes
+checking for unistd.h... (cached) yes
+checking for stdint types... stdint.h (shortcircuit)
+make use of stdint.h in check_stdint.h (assuming C99 compatible system)
+checking for x86_64-linux-gnu-pkg-config... /usr/bin/x86_64-linux-gnu-pkg-config
+checking pkg-config is at least version 0.9.0... yes
+checking for LIBSUBUNIT... yes
+checking for an ANSI C-conforming const... yes
+checking for pid_t... yes
+checking for size_t... yes
+checking for unsigned long long int... yes
+checking for long long int... yes
+checking for intmax_t... yes
+checking for uintmax_t... yes
+checking for uint32_t... yes
+checking whether time.h and sys/time.h may both be included... yes
+checking whether struct tm is in sys/time.h or time.h... time.h
+checking size of int... 4
+checking size of short... 2
+checking size of long... 8
+checking for clockid_t... yes
+checking for timer_t... yes
+checking for stdlib.h... (cached) yes
+checking for GNU libc compatible malloc... yes
+checking for stdlib.h... (cached) yes
+checking for GNU libc compatible realloc... yes
+checking for time.h... yes
+checking for stdarg.h... yes
+checking for varargs.h... no
+checking for timer_create... yes
+checking if timer_create is supported on the system... yes
+checking for alarm... yes
+checking for clock_gettime... yes
+checking for getline... yes
+checking for gettimeofday... yes
+checking for localtime_r... yes
+checking for strdup... yes
+checking for strsignal... yes
+checking whether alarm is declared... yes
+checking whether clock_gettime is declared... no
+checking whether getline gettimeofday is declared... no
+checking whether localtime_r is declared... no
+checking whether strdup is declared... yes
+checking whether strsignal is declared... yes
+checking whether setenv is declared... yes
+checking for setitimer... yes
+checking for fork... yes
+checking for sigaction... yes
+checking for mkstemp... yes
+checking for vsnprintf... yes
+checking whether vsnprintf is C99 compliant... yes
+checking for snprintf... yes
+checking whether snprintf is C99 compliant... yes
+checking for vasprintf... yes
+checking for asprintf... yes
+checking for mawk... /usr/bin/mawk
+checking that generated files are newer than configure... done
+configure: creating ./config.status
+config.status: creating checkmk/checkmk
+config.status: creating check.pc
+config.status: creating Makefile
+config.status: creating checkmk/Makefile
+config.status: creating doc/Makefile
+config.status: creating lib/Makefile
+config.status: creating src/check.h
+config.status: creating src/Makefile
+config.status: creating tests/Makefile
+config.status: creating tests/test_vars
+config.status: creating config.h
+config.status: executing depfiles commands
+config.status: executing libtool commands
+config.status: executing check_stdint.h commands
+config.status: creating check_stdint.h : _CHECK_CHECK_STDINT_H
+config.status: executing checkmk-x commands
+configure: WARNING: unrecognized options: --disable-maintainer-mode
+
+==========================================
+Summary of Check 0.10.0 options:
+
+fork mode ............................ yes
+high resolution timer replacement .... no
+snprintf replacement ................. no
+subunit support....................... yes
+timeout unit tests ................... yes
+==========================================
+CFLAGS="-fPIC -g -O2 -fdebug-prefix-map=/dev/shm/check/check-0.10.0=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security" dh_auto_configure --builddirectory build-pic
+	cd build-pic && ../configure --build=x86_64-linux-gnu --prefix=/usr --includedir=\${prefix}/include --mandir=\${prefix}/share/man --infodir=\${prefix}/share/info --sysconfdir=/etc --localstatedir=/var --disable-silent-rules --libdir=\${prefix}/lib/x86_64-linux-gnu --libexecdir=\${prefix}/lib/x86_64-linux-gnu --disable-maintainer-mode --disable-dependency-tracking
+configure: WARNING: unrecognized options: --disable-maintainer-mode
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for a thread-safe mkdir -p... /bin/mkdir -p
+checking for gawk... no
+checking for mawk... mawk
+checking whether make sets $(MAKE)... yes
+checking whether make supports nested variables... yes
+checking whether make supports the include directive... yes (GNU style)
+checking for gcc... ccache icc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether ccache icc accepts -g... yes
+checking for ccache icc option to accept ISO C89... none needed
+checking whether ccache icc understands -c and -o together... yes
+checking dependency style of ccache icc... none
+checking how to run the C preprocessor... ccache icc -E
+checking for grep that handles long lines and -e... /bin/grep
+checking for egrep... /bin/grep -E
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking minix/config.h usability... no
+checking minix/config.h presence... no
+checking for minix/config.h... no
+checking whether it is safe to define __EXTENSIONS__... yes
+checking whether make supports nested variables... (cached) yes
+Subunit support will enable automatically.
+checking for a sed that does not truncate output... /bin/sed
+checking for gawk... (cached) mawk
+checking for gcc... (cached) ccache icc
+checking whether we are using the GNU C compiler... (cached) yes
+checking whether ccache icc accepts -g... (cached) yes
+checking for ccache icc option to accept ISO C89... (cached) none needed
+checking whether ccache icc understands -c and -o together... (cached) yes
+checking dependency style of ccache icc... (cached) none
+checking whether ln -s works... yes
+checking the archiver (xiar) interface... ar
+checking build system type... x86_64-pc-linux-gnu
+checking host system type... x86_64-pc-linux-gnu
+checking how to print strings... printf
+checking for a sed that does not truncate output... (cached) /bin/sed
+checking for fgrep... /bin/grep -F
+checking for ld used by ccache icc... xild
+checking if the linker (xild) is GNU ld... yes
+checking for BSD- or MS-compatible name lister (nm)... /usr/bin/nm -B
+checking the name lister (/usr/bin/nm -B) interface... BSD nm
+checking the maximum length of command line arguments... 1572864
+checking how to convert x86_64-pc-linux-gnu file names to x86_64-pc-linux-gnu format... func_convert_file_noop
+checking how to convert x86_64-pc-linux-gnu file names to toolchain format... func_convert_file_noop
+checking for xild option to reload object files... -r
+checking for objdump... objdump
+checking how to recognize dependent libraries... pass_all
+checking for dlltool... no
+checking how to associate runtime and link libraries... printf %s\n
+checking for archiver @FILE support... @
+checking for strip... strip
+checking for ranlib... ranlib
+checking command to parse /usr/bin/nm -B output from ccache icc object... ok
+checking for sysroot... no
+checking for a working dd... /bin/dd
+checking how to truncate binary pipes... /bin/dd bs=4096 count=1
+checking for mt... mt
+checking if mt is a manifest tool... no
+checking for dlfcn.h... yes
+checking for objdir... .libs
+checking if ccache icc supports -fno-rtti -fno-exceptions... yes
+checking for ccache icc option to produce PIC... -fPIC -DPIC
+checking if ccache icc PIC flag -fPIC -DPIC works... yes
+checking if ccache icc static flag -static works... no
+checking if ccache icc supports -c -o file.o... yes
+checking if ccache icc supports -c -o file.o... (cached) yes
+checking whether the ccache icc linker (xild -m elf_x86_64) supports shared libraries... xild: warning #10013: no objects specified for multi-file optimization
+xild: executing 'ld'
+yes
+checking whether -lc should be explicitly linked in... no
+checking dynamic linker characteristics... GNU/Linux ld.so
+checking how to hardcode library paths into programs... immediate
+checking whether stripping libraries is possible... yes
+checking if libtool supports shared libraries... yes
+checking whether to build shared libraries... yes
+checking whether to build static libraries... yes
+checking whether the C compiler accepts the -Wextra flag... yes
+checking whether the C compiler accepts the -Wstrict-prototypes flag... yes
+checking whether the C compiler accepts the -Wmissing-prototypes flag... yes
+checking whether the C compiler accepts the -Wwrite-strings flag... yes
+checking whether the C compiler accepts the -Wno-variadic-macros flag... yes
+checking whether the C compiler accepts the -Wimport flag... yes
+checking whether the C compiler accepts the -Wfatal-errors flag... yes
+checking whether the C compiler accepts the -Wformat=2 flag... yes
+checking whether the C compiler accepts the -Winit-self flag... yes
+checking whether the C compiler accepts the -Wmissing-include-dirs flag... yes
+checking whether the C compiler accepts the -Wswitch-default flag... yes
+checking whether the C compiler accepts the -Wunknown-pragmas flag... yes
+checking for gcov... gcov
+checking for lcov... lcov
+checking for genhtml... genhtml
+checking for tex... tex
+checking for the pthreads library -lpthreads... no
+checking whether pthreads work without any flags... yes
+checking for joinable pthread attribute... PTHREAD_CREATE_JOINABLE
+checking if more special flags are required for pthreads... no
+checking for floor in -lm... yes
+checking for clock_gettime, timer_create, timer_settime, timer_delete in -lrt... yes
+checking for struct timespec.tv_sec... yes
+checking for struct timespec.tv_nsec... yes
+checking for struct itimerspec.it_interval... yes
+checking for struct itimerspec.it_value... yes
+checking for ANSI C header files... (cached) yes
+checking for sys/wait.h that is POSIX.1 compatible... yes
+checking fcntl.h usability... yes
+checking fcntl.h presence... yes
+checking for fcntl.h... yes
+checking stddef.h usability... yes
+checking stddef.h presence... yes
+checking for stddef.h... yes
+checking for stdlib.h... (cached) yes
+checking for string.h... (cached) yes
+checking sys/time.h usability... yes
+checking sys/time.h presence... yes
+checking for sys/time.h... yes
+checking for unistd.h... (cached) yes
+checking for stdint types... stdint.h (shortcircuit)
+make use of stdint.h in check_stdint.h (assuming C99 compatible system)
+checking for pkg-config... /usr/bin/pkg-config
+checking pkg-config is at least version 0.9.0... yes
+checking for LIBSUBUNIT... yes
+checking for an ANSI C-conforming const... yes
+checking for pid_t... yes
+checking for size_t... yes
+checking for unsigned long long int... yes
+checking for long long int... yes
+checking for intmax_t... yes
+checking for uintmax_t... yes
+checking for uint32_t... yes
+checking whether time.h and sys/time.h may both be included... yes
+checking whether struct tm is in sys/time.h or time.h... time.h
+checking size of int... 4
+checking size of short... 2
+checking size of long... 8
+checking for clockid_t... yes
+checking for timer_t... yes
+checking for stdlib.h... (cached) yes
+checking for GNU libc compatible malloc... yes
+checking for stdlib.h... (cached) yes
+checking for GNU libc compatible realloc... yes
+checking for time.h... yes
+checking for stdarg.h... yes
+checking for varargs.h... no
+checking for timer_create... yes
+checking if timer_create is supported on the system... yes
+checking for alarm... yes
+checking for clock_gettime... yes
+checking for getline... yes
+checking for gettimeofday... yes
+checking for localtime_r... yes
+checking for strdup... yes
+checking for strsignal... yes
+checking whether alarm is declared... yes
+checking whether clock_gettime is declared... no
+checking whether getline gettimeofday is declared... no
+checking whether localtime_r is declared... no
+checking whether strdup is declared... yes
+checking whether strsignal is declared... yes
+checking whether setenv is declared... yes
+checking for setitimer... yes
+checking for fork... yes
+checking for sigaction... yes
+checking for mkstemp... yes
+checking for vsnprintf... yes
+checking whether vsnprintf is C99 compliant... yes
+checking for snprintf... yes
+checking whether snprintf is C99 compliant... yes
+checking for vasprintf... yes
+checking for asprintf... yes
+checking for mawk... /usr/bin/mawk
+checking that generated files are newer than configure... done
+configure: creating ./config.status
+config.status: creating checkmk/checkmk
+config.status: creating check.pc
+config.status: creating Makefile
+config.status: creating checkmk/Makefile
+config.status: creating doc/Makefile
+config.status: creating lib/Makefile
+config.status: creating src/check.h
+config.status: creating src/Makefile
+config.status: creating tests/Makefile
+config.status: creating tests/test_vars
+config.status: creating config.h
+config.status: executing depfiles commands
+config.status: executing libtool commands
+config.status: executing check_stdint.h commands
+config.status: creating check_stdint.h : _CHECK_CHECK_STDINT_H
+config.status: executing checkmk-x commands
+configure: WARNING: unrecognized options: --disable-maintainer-mode
+
+==========================================
+Summary of Check 0.10.0 options:
+
+fork mode ............................ yes
+high resolution timer replacement .... no
+snprintf replacement ................. no
+subunit support....................... yes
+timeout unit tests ................... yes
+==========================================
+prefix=/usr --host=x86_64-linux-gnu \
+	--libdir=\${prefix}/lib/x86_64-linux-gnu \
+	--infodir=/usr/share/info --disable-shared --enable-subunit
+/bin/sh: 1: --host=x86_64-linux-gnu: not found
+make[1]: [debian/rules:14: override_dh_auto_configure] Error 127 (ignored)
+make[1]: Leaving directory '/dev/shm/check/check-0.10.0'
+   debian/rules override_dh_auto_build
+make[1]: Entering directory '/dev/shm/check/check-0.10.0'
+dh_auto_build --builddirectory build-standard
+	cd build-standard && make -j1
+make[2]: Entering directory '/dev/shm/check/check-0.10.0/build-standard'
+make  all-recursive
+make[3]: Entering directory '/dev/shm/check/check-0.10.0/build-standard'
+Making all in lib
+make[4]: Entering directory '/dev/shm/check/check-0.10.0/build-standard/lib'
+/bin/bash ../libtool  --tag=CC   --mode=compile ccache icc -DHAVE_CONFIG_H -I. -I../../lib -I..   -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/dev/shm/check/check-0.10.0=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -c -o libcompat.lo ../../lib/libcompat.c
+libtool: compile:  ccache icc -DHAVE_CONFIG_H -I. -I../../lib -I.. -Wdate-time -D_FORTIFY_SOURCE=2 -g -O2 -fdebug-prefix-map=/dev/shm/check/check-0.10.0=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -c ../../lib/libcompat.c -o libcompat.o
+icc: command line warning #10006: ignoring unknown option '-fdebug-prefix-map=/dev/shm/check/check-0.10.0=.'
+Front end time                       0.09 (CPU)       0.00 (elapsed)
+Back end time                        0.01 (CPU)       0.00 (elapsed)
+Total compilation time               0.10 (CPU)       0.00 (elapsed)
+/bin/bash ../libtool  --tag=CC   --mode=link ccache icc  -g -O2 -fdebug-prefix-map=/dev/shm/check/check-0.10.0=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -no-undefined -Wl,-z,relro -Wl,--as-needed,--gc-sections,--relax -o libcompat.la  libcompat.lo   -lrt -lm 
+libtool: link: xiar cru .libs/libcompat.a  libcompat.o
+xiar: executing 'ar'
+ar: `u' modifier ignored since `D' is the default (see `U')
+libtool: link: x86_64-linux-gnu-ranlib .libs/libcompat.a
+libtool: link: ( cd ".libs" && rm -f "libcompat.la" && ln -s "../libcompat.la" "libcompat.la" )
+make[4]: Leaving directory '/dev/shm/check/check-0.10.0/build-standard/lib'
+Making all in src
+make[4]: Entering directory '/dev/shm/check/check-0.10.0/build-standard/src'
+/bin/bash ../libtool  --tag=CC   --mode=compile ccache icc -DHAVE_CONFIG_H -I. -I../../src -I..   -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/dev/shm/check/check-0.10.0=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -c -o check.lo ../../src/check.c
+libtool: compile:  ccache icc -DHAVE_CONFIG_H -I. -I../../src -I.. -Wdate-time -D_FORTIFY_SOURCE=2 -g -O2 -fdebug-prefix-map=/dev/shm/check/check-0.10.0=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -c ../../src/check.c -o check.o
+icc: command line warning #10006: ignoring unknown option '-fdebug-prefix-map=/dev/shm/check/check-0.10.0=.'
+Front end time                       0.18 (CPU)       0.00 (elapsed)
+Back end time                        0.04 (CPU)       0.00 (elapsed)
+Total compilation time               0.22 (CPU)       0.00 (elapsed)
+/bin/bash ../libtool  --tag=CC   --mode=compile ccache icc -DHAVE_CONFIG_H -I. -I../../src -I..   -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/dev/shm/check/check-0.10.0=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -c -o check_error.lo ../../src/check_error.c
+libtool: compile:  ccache icc -DHAVE_CONFIG_H -I. -I../../src -I.. -Wdate-time -D_FORTIFY_SOURCE=2 -g -O2 -fdebug-prefix-map=/dev/shm/check/check-0.10.0=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -c ../../src/check_error.c -o check_error.o
+icc: command line warning #10006: ignoring unknown option '-fdebug-prefix-map=/dev/shm/check/check-0.10.0=.'
+Front end time                       0.10 (CPU)       1.00 (elapsed)
+Back end time                        0.01 (CPU)       0.00 (elapsed)
+Total compilation time               0.12 (CPU)       1.00 (elapsed)
+/bin/bash ../libtool  --tag=CC   --mode=compile ccache icc -DHAVE_CONFIG_H -I. -I../../src -I..   -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/dev/shm/check/check-0.10.0=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -c -o check_list.lo ../../src/check_list.c
+libtool: compile:  ccache icc -DHAVE_CONFIG_H -I. -I../../src -I.. -Wdate-time -D_FORTIFY_SOURCE=2 -g -O2 -fdebug-prefix-map=/dev/shm/check/check-0.10.0=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -c ../../src/check_list.c -o check_list.o
+icc: command line warning #10006: ignoring unknown option '-fdebug-prefix-map=/dev/shm/check/check-0.10.0=.'
+Front end time                       0.10 (CPU)       0.00 (elapsed)
+Back end time                        0.02 (CPU)       0.00 (elapsed)
+Total compilation time               0.12 (CPU)       0.00 (elapsed)
+/bin/bash ../libtool  --tag=CC   --mode=compile ccache icc -DHAVE_CONFIG_H -I. -I../../src -I..   -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/dev/shm/check/check-0.10.0=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -c -o check_log.lo ../../src/check_log.c
+libtool: compile:  ccache icc -DHAVE_CONFIG_H -I. -I../../src -I.. -Wdate-time -D_FORTIFY_SOURCE=2 -g -O2 -fdebug-prefix-map=/dev/shm/check/check-0.10.0=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -c ../../src/check_log.c -o check_log.o
+icc: command line warning #10006: ignoring unknown option '-fdebug-prefix-map=/dev/shm/check/check-0.10.0=.'
+Front end time                       0.11 (CPU)       0.00 (elapsed)
+Back end time                        0.04 (CPU)       0.00 (elapsed)
+Total compilation time               0.15 (CPU)       0.00 (elapsed)
+/bin/bash ../libtool  --tag=CC   --mode=compile ccache icc -DHAVE_CONFIG_H -I. -I../../src -I..   -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/dev/shm/check/check-0.10.0=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -c -o check_msg.lo ../../src/check_msg.c
+libtool: compile:  ccache icc -DHAVE_CONFIG_H -I. -I../../src -I.. -Wdate-time -D_FORTIFY_SOURCE=2 -g -O2 -fdebug-prefix-map=/dev/shm/check/check-0.10.0=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -c ../../src/check_msg.c -o check_msg.o
+icc: command line warning #10006: ignoring unknown option '-fdebug-prefix-map=/dev/shm/check/check-0.10.0=.'
+Front end time                       0.12 (CPU)       0.00 (elapsed)
+Back end time                        0.02 (CPU)       0.00 (elapsed)
+Total compilation time               0.14 (CPU)       0.00 (elapsed)
+/bin/bash ../libtool  --tag=CC   --mode=compile ccache icc -DHAVE_CONFIG_H -I. -I../../src -I..   -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/dev/shm/check/check-0.10.0=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -c -o check_pack.lo ../../src/check_pack.c
+libtool: compile:  ccache icc -DHAVE_CONFIG_H -I. -I../../src -I.. -Wdate-time -D_FORTIFY_SOURCE=2 -g -O2 -fdebug-prefix-map=/dev/shm/check/check-0.10.0=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -c ../../src/check_pack.c -o check_pack.o
+icc: command line warning #10006: ignoring unknown option '-fdebug-prefix-map=/dev/shm/check/check-0.10.0=.'
+Front end time                       0.11 (CPU)       0.00 (elapsed)
+Back end time                        0.03 (CPU)       0.00 (elapsed)
+Total compilation time               0.14 (CPU)       0.00 (elapsed)
+/bin/bash ../libtool  --tag=CC   --mode=compile ccache icc -DHAVE_CONFIG_H -I. -I../../src -I..   -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/dev/shm/check/check-0.10.0=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -c -o check_print.lo ../../src/check_print.c
+libtool: compile:  ccache icc -DHAVE_CONFIG_H -I. -I../../src -I.. -Wdate-time -D_FORTIFY_SOURCE=2 -g -O2 -fdebug-prefix-map=/dev/shm/check/check-0.10.0=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -c ../../src/check_print.c -o check_print.o
+icc: command line warning #10006: ignoring unknown option '-fdebug-prefix-map=/dev/shm/check/check-0.10.0=.'
+Front end time                       0.10 (CPU)       0.00 (elapsed)
+Back end time                        0.02 (CPU)       0.00 (elapsed)
+Total compilation time               0.13 (CPU)       0.00 (elapsed)
+/bin/bash ../libtool  --tag=CC   --mode=compile ccache icc -DHAVE_CONFIG_H -I. -I../../src -I..   -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/dev/shm/check/check-0.10.0=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -c -o check_run.lo ../../src/check_run.c
+libtool: compile:  ccache icc -DHAVE_CONFIG_H -I. -I../../src -I.. -Wdate-time -D_FORTIFY_SOURCE=2 -g -O2 -fdebug-prefix-map=/dev/shm/check/check-0.10.0=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -c ../../src/check_run.c -o check_run.o
+icc: command line warning #10006: ignoring unknown option '-fdebug-prefix-map=/dev/shm/check/check-0.10.0=.'
+Front end time                       0.12 (CPU)       0.00 (elapsed)
+Back end time                        0.04 (CPU)       0.00 (elapsed)
+Total compilation time               0.16 (CPU)       0.00 (elapsed)
+/bin/bash ../libtool  --tag=CC   --mode=compile ccache icc -DHAVE_CONFIG_H -I. -I../../src -I..   -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/dev/shm/check/check-0.10.0=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -c -o check_str.lo ../../src/check_str.c
+libtool: compile:  ccache icc -DHAVE_CONFIG_H -I. -I../../src -I.. -Wdate-time -D_FORTIFY_SOURCE=2 -g -O2 -fdebug-prefix-map=/dev/shm/check/check-0.10.0=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -c ../../src/check_str.c -o check_str.o
+icc: command line warning #10006: ignoring unknown option '-fdebug-prefix-map=/dev/shm/check/check-0.10.0=.'
+../../src/check_str.c(40): warning #3179: deprecated conversion of string literal to char* (should be const char*)
+      exact_msg = (tr->rtype == CK_ERROR) ? "(after this point) " : "";
+                                                                  ^
+
+../../src/check_str.c(55): warning #3179: deprecated conversion of string literal to char* (should be const char*)
+      exact_msg = (tr->rtype == CK_ERROR) ? "(after this point) " : "";
+                                                                  ^
+
+Front end time                       0.10 (CPU)       0.00 (elapsed)
+Back end time                        0.02 (CPU)       0.00 (elapsed)
+Total compilation time               0.12 (CPU)       0.00 (elapsed)
+/bin/sed -n -e 's/^..*CK_EXPORT[[:space:]][[:space:]]*\([[:alnum:]_][[:alnum:]_]*\)..*$/\1/p' ../../src/check.h.in > exported.sym
+/bin/bash ../libtool  --tag=CC   --mode=link ccache icc  -g -O2 -fdebug-prefix-map=/dev/shm/check/check-0.10.0=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -no-undefined -export-symbols exported.sym -Wl,-z,relro -Wl,--as-needed,--gc-sections,--relax -o libcheck.la -rpath /usr/lib/x86_64-linux-gnu check.lo check_error.lo check_list.lo check_log.lo check_msg.lo check_pack.lo check_print.lo check_run.lo check_str.lo  -lsubunit ../lib/libcompat.la -lrt -lm 
+libtool: link: (cd .libs/libcheck.lax/libcompat.a && xiar x "/dev/shm/check/check-0.10.0/build-standard/src/../lib/.libs/libcompat.a")
+xiar: executing 'ar'
+xiar: executing 'ar'
+libtool: link: xiar cru .libs/libcheck.a  check.o check_error.o check_list.o check_log.o check_msg.o check_pack.o check_print.o check_run.o check_str.o  .libs/libcheck.lax/libcompat.a/libcompat.o 
+xiar: executing 'ar'
+ar: `u' modifier ignored since `D' is the default (see `U')
+libtool: link: x86_64-linux-gnu-ranlib .libs/libcheck.a
+libtool: link: rm -fr .libs/libcheck.lax
+libtool: link: ( cd ".libs" && rm -f "libcheck.la" && ln -s "../libcheck.la" "libcheck.la" )
+/bin/bash ../libtool  --tag=CC   --mode=link ccache icc  -g -O2 -fdebug-prefix-map=/dev/shm/check/check-0.10.0=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -no-undefined -Wl,-z,relro -Wl,--as-needed,--gc-sections,--relax -o libcheckinternal.la  check.lo check_error.lo check_list.lo check_log.lo check_msg.lo check_pack.lo check_print.lo check_run.lo check_str.lo  -lsubunit ../lib/libcompat.la -lrt -lm 
+libtool: link: (cd .libs/libcheckinternal.lax/libcompat.a && xiar x "/dev/shm/check/check-0.10.0/build-standard/src/../lib/.libs/libcompat.a")
+xiar: executing 'ar'
+xiar: executing 'ar'
+libtool: link: xiar cru .libs/libcheckinternal.a  check.o check_error.o check_list.o check_log.o check_msg.o check_pack.o check_print.o check_run.o check_str.o  .libs/libcheckinternal.lax/libcompat.a/libcompat.o 
+xiar: executing 'ar'
+ar: `u' modifier ignored since `D' is the default (see `U')
+libtool: link: x86_64-linux-gnu-ranlib .libs/libcheckinternal.a
+libtool: link: rm -fr .libs/libcheckinternal.lax
+libtool: link: ( cd ".libs" && rm -f "libcheckinternal.la" && ln -s "../libcheckinternal.la" "libcheckinternal.la" )
+make[4]: Leaving directory '/dev/shm/check/check-0.10.0/build-standard/src'
+Making all in doc
+make[4]: Entering directory '/dev/shm/check/check-0.10.0/build-standard/doc'
+cd ../../doc/example; \
+diff -U 100 src/money.1.h src/money.2.h | filterdiff --remove-timestamps > /dev/shm/check/check-0.10.0/build-standard/doc/money.1-2.h.diff || test $? -eq 1; \
+cd -;
+/dev/shm/check/check-0.10.0/build-standard/doc
+cd ../../doc/example; \
+diff -U 100 src/money.1.c src/money.3.c | filterdiff --remove-timestamps > /dev/shm/check/check-0.10.0/build-standard/doc/money.1-3.c.diff || test $? -eq 1; \
+cd -;
+/dev/shm/check/check-0.10.0/build-standard/doc
+cd ../../doc/example; \
+diff -U 100 src/money.3.c src/money.4.c | filterdiff --remove-timestamps > /dev/shm/check/check-0.10.0/build-standard/doc/money.3-4.c.diff || test $? -eq 1; \
+cd -;
+/dev/shm/check/check-0.10.0/build-standard/doc
+cd ../../doc/example; \
+diff -U 100 src/money.4.c src/money.5.c | filterdiff --remove-timestamps > /dev/shm/check/check-0.10.0/build-standard/doc/money.4-5.c.diff || test $? -eq 1; \
+cd -;
+/dev/shm/check/check-0.10.0/build-standard/doc
+cd ../../doc/example; \
+diff -U 100 src/money.5.c src/money.6.c | filterdiff --remove-timestamps > /dev/shm/check/check-0.10.0/build-standard/doc/money.5-6.c.diff || test $? -eq 1; \
+cd -;
+/dev/shm/check/check-0.10.0/build-standard/doc
+cd ../../doc/example; \
+diff -U 100 tests/check_money.1.c tests/check_money.2.c | filterdiff --remove-timestamps > /dev/shm/check/check-0.10.0/build-standard/doc/check_money.1-2.c.diff || test $? -eq 1; \
+cd -;
+/dev/shm/check/check-0.10.0/build-standard/doc
+cd ../../doc/example; \
+diff -U 100 tests/check_money.2.c tests/check_money.3.c | filterdiff --remove-timestamps > /dev/shm/check/check-0.10.0/build-standard/doc/check_money.2-3.c.diff || test $? -eq 1; \
+cd -;
+/dev/shm/check/check-0.10.0/build-standard/doc
+cd ../../doc/example; \
+diff -U 100 tests/check_money.3.c tests/check_money.6.c | filterdiff --remove-timestamps > /dev/shm/check/check-0.10.0/build-standard/doc/check_money.3-6.c.diff || test $? -eq 1; \
+cd -;
+/dev/shm/check/check-0.10.0/build-standard/doc
+cd ../../doc/example; \
+diff -U 100 tests/check_money.6.c tests/check_money.7.c | filterdiff --remove-timestamps > /dev/shm/check/check-0.10.0/build-standard/doc/check_money.6-7.c.diff || test $? -eq 1; \
+cd -;
+/dev/shm/check/check-0.10.0/build-standard/doc
+Updating ../../doc/version.texi
+restore=: && backupdir=".am$$" && \
+am__cwd=`pwd` && CDPATH="${ZSH_VERSION+.}:" && cd ../../doc && \
+rm -rf $backupdir && mkdir $backupdir && \
+if (/bin/bash /dev/shm/check/check-0.10.0/build-aux/missing makeinfo --version) >/dev/null 2>&1; then \
+  for f in ../../doc/check.info ../../doc/check.info-[0-9] ../../doc/check.info-[0-9][0-9] ../../doc/check.i[0-9] ../../doc/check.i[0-9][0-9]; do \
+    if test -f $f; then mv $f $backupdir; restore=mv; else :; fi; \
+  done; \
+else :; fi && \
+cd "$am__cwd"; \
+if /bin/bash /dev/shm/check/check-0.10.0/build-aux/missing makeinfo   -I ../../doc \
+ -o ../../doc/check.info ../../doc/check.texi; \
+then \
+  rc=0; \
+  CDPATH="${ZSH_VERSION+.}:" && cd ../../doc; \
+else \
+  rc=$?; \
+  CDPATH="${ZSH_VERSION+.}:" && cd ../../doc && \
+  $restore $backupdir/* `echo "./../../doc/check.info" | sed 's|[^/]*$||'`; \
+fi; \
+rm -rf $backupdir; exit $rc
+make[4]: Leaving directory '/dev/shm/check/check-0.10.0/build-standard/doc'
+Making all in .
+make[4]: Entering directory '/dev/shm/check/check-0.10.0/build-standard'
+make[4]: Leaving directory '/dev/shm/check/check-0.10.0/build-standard'
+Making all in checkmk
+make[4]: Entering directory '/dev/shm/check/check-0.10.0/build-standard/checkmk'
+make[4]: Nothing to be done for 'all'.
+make[4]: Leaving directory '/dev/shm/check/check-0.10.0/build-standard/checkmk'
+Making all in tests
+make[4]: Entering directory '/dev/shm/check/check-0.10.0/build-standard/tests'
+ccache icc -DHAVE_CONFIG_H -I. -I../../tests -I..  -I../src -I../../src -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/dev/shm/check/check-0.10.0=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -c -o check_check_export-check_check_sub.o `test -f 'check_check_sub.c' || echo '../../tests/'`check_check_sub.c
+icc: command line warning #10006: ignoring unknown option '-fdebug-prefix-map=/dev/shm/check/check-0.10.0=.'
+Front end time                       0.15 (CPU)       0.00 (elapsed)
+Back end time                        0.10 (CPU)       0.00 (elapsed)
+Total compilation time               0.25 (CPU)       0.00 (elapsed)
+ccache icc -DHAVE_CONFIG_H -I. -I../../tests -I..  -I../src -I../../src -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/dev/shm/check/check-0.10.0=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -c -o check_check_export-check_check_master.o `test -f 'check_check_master.c' || echo '../../tests/'`check_check_master.c
+icc: command line warning #10006: ignoring unknown option '-fdebug-prefix-map=/dev/shm/check/check-0.10.0=.'
+Front end time                       0.12 (CPU)       1.00 (elapsed)
+Back end time                        0.04 (CPU)       0.00 (elapsed)
+Total compilation time               0.16 (CPU)       1.00 (elapsed)
+ccache icc -DHAVE_CONFIG_H -I. -I../../tests -I..  -I../src -I../../src -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/dev/shm/check/check-0.10.0=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -c -o check_check_export-check_check_log.o `test -f 'check_check_log.c' || echo '../../tests/'`check_check_log.c
+icc: command line warning #10006: ignoring unknown option '-fdebug-prefix-map=/dev/shm/check/check-0.10.0=.'
+Front end time                       0.11 (CPU)       0.00 (elapsed)
+Back end time                        0.03 (CPU)       0.00 (elapsed)
+Total compilation time               0.14 (CPU)       0.00 (elapsed)
+ccache icc -DHAVE_CONFIG_H -I. -I../../tests -I..  -I../src -I../../src -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/dev/shm/check/check-0.10.0=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -c -o check_check_export-check_check_fork.o `test -f 'check_check_fork.c' || echo '../../tests/'`check_check_fork.c
+icc: command line warning #10006: ignoring unknown option '-fdebug-prefix-map=/dev/shm/check/check-0.10.0=.'
+Front end time                       0.11 (CPU)       0.00 (elapsed)
+Back end time                        0.02 (CPU)       0.00 (elapsed)
+Total compilation time               0.13 (CPU)       0.00 (elapsed)
+ccache icc -DHAVE_CONFIG_H -I. -I../../tests -I..  -I../src -I../../src -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/dev/shm/check/check-0.10.0=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -c -o check_check_export-check_check_export_main.o `test -f 'check_check_export_main.c' || echo '../../tests/'`check_check_export_main.c
+icc: command line warning #10006: ignoring unknown option '-fdebug-prefix-map=/dev/shm/check/check-0.10.0=.'
+Front end time                       0.10 (CPU)       1.00 (elapsed)
+Back end time                        0.01 (CPU)       0.00 (elapsed)
+Total compilation time               0.12 (CPU)       1.00 (elapsed)
+/bin/bash ../libtool  --tag=CC   --mode=link ccache icc  -g -O2 -fdebug-prefix-map=/dev/shm/check/check-0.10.0=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas  -Wl,-z,relro -Wl,--as-needed,--gc-sections,--relax -o check_check_export check_check_export-check_check_sub.o check_check_export-check_check_master.o check_check_export-check_check_log.o check_check_export-check_check_fork.o check_check_export-check_check_export_main.o ../src/libcheck.la ../lib/libcompat.la -lrt -lm 
+libtool: link: ccache icc -g -O2 -fdebug-prefix-map=/dev/shm/check/check-0.10.0=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -Wl,-z -Wl,relro -Wl,--as-needed -Wl,--gc-sections -Wl,--relax -o check_check_export check_check_export-check_check_sub.o check_check_export-check_check_master.o check_check_export-check_check_log.o check_check_export-check_check_fork.o check_check_export-check_check_export_main.o  ../src/.libs/libcheck.a -lsubunit ../lib/.libs/libcompat.a -lrt -lm
+icc: command line warning #10006: ignoring unknown option '-fdebug-prefix-map=/dev/shm/check/check-0.10.0=.'
+ipo: remark #11000: performing multi-file optimizations
+ipo: remark #11006: generating object file /tmp/ipo_icc7ngC2z.o
+ccache icc -DHAVE_CONFIG_H -I. -I../../tests -I..  -I../src -I../../src -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/dev/shm/check/check-0.10.0=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -c -o check_check-check_list.o `test -f 'check_list.c' || echo '../../tests/'`check_list.c
+icc: command line warning #10006: ignoring unknown option '-fdebug-prefix-map=/dev/shm/check/check-0.10.0=.'
+Front end time                       0.11 (CPU)       0.00 (elapsed)
+Back end time                        0.02 (CPU)       0.00 (elapsed)
+Total compilation time               0.14 (CPU)       0.00 (elapsed)
+ccache icc -DHAVE_CONFIG_H -I. -I../../tests -I..  -I../src -I../../src -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/dev/shm/check/check-0.10.0=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -c -o check_check-check_check_sub.o `test -f 'check_check_sub.c' || echo '../../tests/'`check_check_sub.c
+icc: command line warning #10006: ignoring unknown option '-fdebug-prefix-map=/dev/shm/check/check-0.10.0=.'
+Front end time                       0.15 (CPU)       0.00 (elapsed)
+Back end time                        0.10 (CPU)       0.00 (elapsed)
+Total compilation time               0.25 (CPU)       0.00 (elapsed)
+ccache icc -DHAVE_CONFIG_H -I. -I../../tests -I..  -I../src -I../../src -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/dev/shm/check/check-0.10.0=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -c -o check_check-check_check_master.o `test -f 'check_check_master.c' || echo '../../tests/'`check_check_master.c
+icc: command line warning #10006: ignoring unknown option '-fdebug-prefix-map=/dev/shm/check/check-0.10.0=.'
+Front end time                       0.12 (CPU)       1.00 (elapsed)
+Back end time                        0.04 (CPU)       0.00 (elapsed)
+Total compilation time               0.16 (CPU)       1.00 (elapsed)
+ccache icc -DHAVE_CONFIG_H -I. -I../../tests -I..  -I../src -I../../src -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/dev/shm/check/check-0.10.0=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -c -o check_check-check_check_msg.o `test -f 'check_check_msg.c' || echo '../../tests/'`check_check_msg.c
+icc: command line warning #10006: ignoring unknown option '-fdebug-prefix-map=/dev/shm/check/check-0.10.0=.'
+Front end time                       0.11 (CPU)       0.00 (elapsed)
+Back end time                        0.02 (CPU)       0.00 (elapsed)
+Total compilation time               0.13 (CPU)       0.00 (elapsed)
+ccache icc -DHAVE_CONFIG_H -I. -I../../tests -I..  -I../src -I../../src -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/dev/shm/check/check-0.10.0=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -c -o check_check-check_check_log.o `test -f 'check_check_log.c' || echo '../../tests/'`check_check_log.c
+icc: command line warning #10006: ignoring unknown option '-fdebug-prefix-map=/dev/shm/check/check-0.10.0=.'
+Front end time                       0.11 (CPU)       0.00 (elapsed)
+Back end time                        0.03 (CPU)       0.00 (elapsed)
+Total compilation time               0.14 (CPU)       0.00 (elapsed)
+ccache icc -DHAVE_CONFIG_H -I. -I../../tests -I..  -I../src -I../../src -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/dev/shm/check/check-0.10.0=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -c -o check_check-check_check_log_internal.o `test -f 'check_check_log_internal.c' || echo '../../tests/'`check_check_log_internal.c
+icc: command line warning #10006: ignoring unknown option '-fdebug-prefix-map=/dev/shm/check/check-0.10.0=.'
+Front end time                       0.11 (CPU)       1.00 (elapsed)
+Back end time                        0.01 (CPU)       0.00 (elapsed)
+Total compilation time               0.12 (CPU)       1.00 (elapsed)
+ccache icc -DHAVE_CONFIG_H -I. -I../../tests -I..  -I../src -I../../src -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/dev/shm/check/check-0.10.0=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -c -o check_check-check_check_limit.o `test -f 'check_check_limit.c' || echo '../../tests/'`check_check_limit.c
+icc: command line warning #10006: ignoring unknown option '-fdebug-prefix-map=/dev/shm/check/check-0.10.0=.'
+Front end time                       0.11 (CPU)       0.00 (elapsed)
+Back end time                        0.01 (CPU)       0.00 (elapsed)
+Total compilation time               0.12 (CPU)       0.00 (elapsed)
+ccache icc -DHAVE_CONFIG_H -I. -I../../tests -I..  -I../src -I../../src -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/dev/shm/check/check-0.10.0=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -c -o check_check-check_check_fork.o `test -f 'check_check_fork.c' || echo '../../tests/'`check_check_fork.c
+icc: command line warning #10006: ignoring unknown option '-fdebug-prefix-map=/dev/shm/check/check-0.10.0=.'
+Front end time                       0.11 (CPU)       0.00 (elapsed)
+Back end time                        0.02 (CPU)       0.00 (elapsed)
+Total compilation time               0.13 (CPU)       0.00 (elapsed)
+ccache icc -DHAVE_CONFIG_H -I. -I../../tests -I..  -I../src -I../../src -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/dev/shm/check/check-0.10.0=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -c -o check_check-check_check_fixture.o `test -f 'check_check_fixture.c' || echo '../../tests/'`check_check_fixture.c
+icc: command line warning #10006: ignoring unknown option '-fdebug-prefix-map=/dev/shm/check/check-0.10.0=.'
+Front end time                       0.12 (CPU)       0.00 (elapsed)
+Back end time                        0.04 (CPU)       0.00 (elapsed)
+Total compilation time               0.17 (CPU)       0.00 (elapsed)
+ccache icc -DHAVE_CONFIG_H -I. -I../../tests -I..  -I../src -I../../src -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/dev/shm/check/check-0.10.0=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -c -o check_check-check_check_pack.o `test -f 'check_check_pack.c' || echo '../../tests/'`check_check_pack.c
+icc: command line warning #10006: ignoring unknown option '-fdebug-prefix-map=/dev/shm/check/check-0.10.0=.'
+../../tests/check_check_pack.c(24): warning #3179: deprecated conversion of string literal to char* (should be const char*)
+    fmsg->msg = (char *) "Hello, world!";
+                ^
+
+../../tests/check_check_pack.c(56): warning #3179: deprecated conversion of string literal to char* (should be const char*)
+    lmsg->file = (char *) "abc123.c";
+                 ^
+
+../../tests/check_check_pack.c(173): warning #3179: deprecated conversion of string literal to char* (should be const char*)
+    fmsg.msg = (char *) "";
+               ^
+
+../../tests/check_check_pack.c(198): warning #3179: deprecated conversion of string literal to char* (should be const char*)
+    lmsg.file = (char *) "";
+                ^
+
+../../tests/check_check_pack.c(227): warning #3179: deprecated conversion of string literal to char* (should be const char*)
+    lmsg.file = (char *) "abc123.c";
+                ^
+
+../../tests/check_check_pack.c(229): warning #3179: deprecated conversion of string literal to char* (should be const char*)
+    fmsg.msg = (char *) "oops";
+               ^
+
+../../tests/check_check_pack.c(267): warning #3179: deprecated conversion of string literal to char* (should be const char*)
+    lmsg.file = (char *) "abc123.c";
+                ^
+
+../../tests/check_check_pack.c(269): warning #3179: deprecated conversion of string literal to char* (should be const char*)
+    fmsg.msg = (char *) "oops";
+               ^
+
+../../tests/check_check_pack.c(324): warning #3179: deprecated conversion of string literal to char* (should be const char*)
+    lmsg.file = (char *) "abc123.c";
+                ^
+
+../../tests/check_check_pack.c(356): warning #3179: deprecated conversion of string literal to char* (should be const char*)
+    lmsg.file = (char *) "abc123.c";
+                ^
+
+Front end time                       0.12 (CPU)       1.00 (elapsed)
+Back end time                        0.04 (CPU)       0.00 (elapsed)
+Total compilation time               0.16 (CPU)       1.00 (elapsed)
+ccache icc -DHAVE_CONFIG_H -I. -I../../tests -I..  -I../src -I../../src -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/dev/shm/check/check-0.10.0=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -c -o check_check-check_check_exit.o `test -f 'check_check_exit.c' || echo '../../tests/'`check_check_exit.c
+icc: command line warning #10006: ignoring unknown option '-fdebug-prefix-map=/dev/shm/check/check-0.10.0=.'
+Front end time                       0.11 (CPU)       0.00 (elapsed)
+Back end time                        0.01 (CPU)       0.00 (elapsed)
+Total compilation time               0.12 (CPU)       0.00 (elapsed)
+ccache icc -DHAVE_CONFIG_H -I. -I../../tests -I..  -I../src -I../../src -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/dev/shm/check/check-0.10.0=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -c -o check_check-check_check_selective.o `test -f 'check_check_selective.c' || echo '../../tests/'`check_check_selective.c
+icc: command line warning #10006: ignoring unknown option '-fdebug-prefix-map=/dev/shm/check/check-0.10.0=.'
+Front end time                       0.11 (CPU)       0.00 (elapsed)
+Back end time                        0.03 (CPU)       0.00 (elapsed)
+Total compilation time               0.14 (CPU)       0.00 (elapsed)
+ccache icc -DHAVE_CONFIG_H -I. -I../../tests -I..  -I../src -I../../src -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/dev/shm/check/check-0.10.0=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -c -o check_check-check_check_main.o `test -f 'check_check_main.c' || echo '../../tests/'`check_check_main.c
+icc: command line warning #10006: ignoring unknown option '-fdebug-prefix-map=/dev/shm/check/check-0.10.0=.'
+Front end time                       0.11 (CPU)       1.00 (elapsed)
+Back end time                        0.01 (CPU)       0.00 (elapsed)
+Total compilation time               0.12 (CPU)       1.00 (elapsed)
+/bin/bash ../libtool  --tag=CC   --mode=link ccache icc  -g -O2 -fdebug-prefix-map=/dev/shm/check/check-0.10.0=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas  -Wl,-z,relro -Wl,--as-needed,--gc-sections,--relax -o check_check check_check-check_list.o check_check-check_check_sub.o check_check-check_check_master.o check_check-check_check_msg.o check_check-check_check_log.o check_check-check_check_log_internal.o check_check-check_check_limit.o check_check-check_check_fork.o check_check-check_check_fixture.o check_check-check_check_pack.o check_check-check_check_exit.o check_check-check_check_selective.o check_check-check_check_main.o ../src/libcheckinternal.la ../lib/libcompat.la -lrt -lm 
+libtool: link: ccache icc -g -O2 -fdebug-prefix-map=/dev/shm/check/check-0.10.0=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -Wl,-z -Wl,relro -Wl,--as-needed -Wl,--gc-sections -Wl,--relax -o check_check check_check-check_list.o check_check-check_check_sub.o check_check-check_check_master.o check_check-check_check_msg.o check_check-check_check_log.o check_check-check_check_log_internal.o check_check-check_check_limit.o check_check-check_check_fork.o check_check-check_check_fixture.o check_check-check_check_pack.o check_check-check_check_exit.o check_check-check_check_selective.o check_check-check_check_main.o  ../src/.libs/libcheckinternal.a -lsubunit ../lib/.libs/libcompat.a -lrt -lm
+icc: command line warning #10006: ignoring unknown option '-fdebug-prefix-map=/dev/shm/check/check-0.10.0=.'
+ipo: remark #11000: performing multi-file optimizations
+ipo: remark #11006: generating object file /tmp/ipo_iccW0zFOg.o
+ccache icc -DHAVE_CONFIG_H -I. -I../../tests -I..  -I../src -I../../src -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/dev/shm/check/check-0.10.0=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -c -o check_stress.o ../../tests/check_stress.c
+icc: command line warning #10006: ignoring unknown option '-fdebug-prefix-map=/dev/shm/check/check-0.10.0=.'
+Front end time                       0.11 (CPU)       0.00 (elapsed)
+Back end time                        0.01 (CPU)       0.00 (elapsed)
+Total compilation time               0.12 (CPU)       0.00 (elapsed)
+/bin/bash ../libtool  --tag=CC   --mode=link ccache icc  -g -O2 -fdebug-prefix-map=/dev/shm/check/check-0.10.0=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas  -Wl,-z,relro -Wl,--as-needed,--gc-sections,--relax -o check_stress check_stress.o ../src/libcheck.la ../lib/libcompat.la -lrt -lm 
+libtool: link: ccache icc -g -O2 -fdebug-prefix-map=/dev/shm/check/check-0.10.0=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -Wl,-z -Wl,relro -Wl,--as-needed -Wl,--gc-sections -Wl,--relax -o check_stress check_stress.o  ../src/.libs/libcheck.a -lsubunit ../lib/.libs/libcompat.a -lrt -lm
+icc: command line warning #10006: ignoring unknown option '-fdebug-prefix-map=/dev/shm/check/check-0.10.0=.'
+ipo: remark #11000: performing multi-file optimizations
+ipo: remark #11006: generating object file /tmp/ipo_iccky7fPd.o
+ccache icc -DHAVE_CONFIG_H -I. -I../../tests -I..  -I../src -I../../src -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/dev/shm/check/check-0.10.0=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -c -o check_thread_stress-check_thread_stress.o `test -f 'check_thread_stress.c' || echo '../../tests/'`check_thread_stress.c
+icc: command line warning #10006: ignoring unknown option '-fdebug-prefix-map=/dev/shm/check/check-0.10.0=.'
+Front end time                       0.11 (CPU)       0.00 (elapsed)
+Back end time                        0.01 (CPU)       0.00 (elapsed)
+Total compilation time               0.12 (CPU)       0.00 (elapsed)
+/bin/bash ../libtool  --tag=CC   --mode=link ccache icc  -g -O2 -fdebug-prefix-map=/dev/shm/check/check-0.10.0=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas  -Wl,-z,relro -Wl,--as-needed,--gc-sections,--relax -o check_thread_stress check_thread_stress-check_thread_stress.o ../src/libcheck.la ../lib/libcompat.la  -lrt -lm 
+libtool: link: ccache icc -g -O2 -fdebug-prefix-map=/dev/shm/check/check-0.10.0=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -Wl,-z -Wl,relro -Wl,--as-needed -Wl,--gc-sections -Wl,--relax -o check_thread_stress check_thread_stress-check_thread_stress.o  ../src/.libs/libcheck.a -lsubunit ../lib/.libs/libcompat.a -lrt -lm
+icc: command line warning #10006: ignoring unknown option '-fdebug-prefix-map=/dev/shm/check/check-0.10.0=.'
+ipo: remark #11000: performing multi-file optimizations
+ipo: remark #11006: generating object file /tmp/ipo_iccadEUkf.o
+ccache icc -DHAVE_CONFIG_H -I. -I../../tests -I..  -I../src -I../../src -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/dev/shm/check/check-0.10.0=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -c -o check_nofork.o ../../tests/check_nofork.c
+icc: command line warning #10006: ignoring unknown option '-fdebug-prefix-map=/dev/shm/check/check-0.10.0=.'
+Front end time                       0.11 (CPU)       0.00 (elapsed)
+Back end time                        0.01 (CPU)       0.00 (elapsed)
+Total compilation time               0.12 (CPU)       0.00 (elapsed)
+/bin/bash ../libtool  --tag=CC   --mode=link ccache icc  -g -O2 -fdebug-prefix-map=/dev/shm/check/check-0.10.0=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas  -Wl,-z,relro -Wl,--as-needed,--gc-sections,--relax -o check_nofork check_nofork.o ../src/libcheck.la ../lib/libcompat.la -lrt -lm 
+libtool: link: ccache icc -g -O2 -fdebug-prefix-map=/dev/shm/check/check-0.10.0=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -Wl,-z -Wl,relro -Wl,--as-needed -Wl,--gc-sections -Wl,--relax -o check_nofork check_nofork.o  ../src/.libs/libcheck.a -lsubunit ../lib/.libs/libcompat.a -lrt -lm
+icc: command line warning #10006: ignoring unknown option '-fdebug-prefix-map=/dev/shm/check/check-0.10.0=.'
+ipo: remark #11000: performing multi-file optimizations
+ipo: remark #11006: generating object file /tmp/ipo_icc9xokdK.o
+ccache icc -DHAVE_CONFIG_H -I. -I../../tests -I..  -I../src -I../../src -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/dev/shm/check/check-0.10.0=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -c -o check_nofork_teardown.o ../../tests/check_nofork_teardown.c
+icc: command line warning #10006: ignoring unknown option '-fdebug-prefix-map=/dev/shm/check/check-0.10.0=.'
+Front end time                       0.10 (CPU)       0.00 (elapsed)
+Back end time                        0.01 (CPU)       0.00 (elapsed)
+Total compilation time               0.12 (CPU)       0.00 (elapsed)
+/bin/bash ../libtool  --tag=CC   --mode=link ccache icc  -g -O2 -fdebug-prefix-map=/dev/shm/check/check-0.10.0=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas  -Wl,-z,relro -Wl,--as-needed,--gc-sections,--relax -o check_nofork_teardown check_nofork_teardown.o ../src/libcheck.la ../lib/libcompat.la -lrt -lm 
+libtool: link: ccache icc -g -O2 -fdebug-prefix-map=/dev/shm/check/check-0.10.0=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -Wl,-z -Wl,relro -Wl,--as-needed -Wl,--gc-sections -Wl,--relax -o check_nofork_teardown check_nofork_teardown.o  ../src/.libs/libcheck.a -lsubunit ../lib/.libs/libcompat.a -lrt -lm
+icc: command line warning #10006: ignoring unknown option '-fdebug-prefix-map=/dev/shm/check/check-0.10.0=.'
+ipo: remark #11000: performing multi-file optimizations
+ipo: remark #11006: generating object file /tmp/ipo_icciWFw82.o
+ccache icc -DHAVE_CONFIG_H -I. -I../../tests -I..  -I../src -I../../src -Wdate-time -D_FORTIFY_SOURCE=2 -DTIMEOUT_TESTS_ENABLED=0 -DMEMORY_LEAKING_TESTS_ENABLED=0 -g -O2 -fdebug-prefix-map=/dev/shm/check/check-0.10.0=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -c -o check_mem_leaks-check_mem_leaks.o `test -f 'check_mem_leaks.c' || echo '../../tests/'`check_mem_leaks.c
+icc: command line warning #10006: ignoring unknown option '-fdebug-prefix-map=/dev/shm/check/check-0.10.0=.'
+../../tests/check_mem_leaks.c(15): warning #2959: function prototype is missing the argument types
+  int main ()
+      ^
+
+Front end time                       0.06 (CPU)       0.00 (elapsed)
+Back end time                        0.01 (CPU)       0.00 (elapsed)
+Total compilation time               0.07 (CPU)       0.00 (elapsed)
+ccache icc -DHAVE_CONFIG_H -I. -I../../tests -I..  -I../src -I../../src -Wdate-time -D_FORTIFY_SOURCE=2 -DTIMEOUT_TESTS_ENABLED=0 -DMEMORY_LEAKING_TESTS_ENABLED=0 -g -O2 -fdebug-prefix-map=/dev/shm/check/check-0.10.0=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -c -o check_mem_leaks-check_check_log.o `test -f 'check_check_log.c' || echo '../../tests/'`check_check_log.c
+icc: command line warning #10006: ignoring unknown option '-fdebug-prefix-map=/dev/shm/check/check-0.10.0=.'
+Front end time                       0.11 (CPU)       0.00 (elapsed)
+Back end time                        0.03 (CPU)       0.00 (elapsed)
+Total compilation time               0.14 (CPU)       0.00 (elapsed)
+ccache icc -DHAVE_CONFIG_H -I. -I../../tests -I..  -I../src -I../../src -Wdate-time -D_FORTIFY_SOURCE=2 -DTIMEOUT_TESTS_ENABLED=0 -DMEMORY_LEAKING_TESTS_ENABLED=0 -g -O2 -fdebug-prefix-map=/dev/shm/check/check-0.10.0=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -c -o check_mem_leaks-check_check_fork.o `test -f 'check_check_fork.c' || echo '../../tests/'`check_check_fork.c
+icc: command line warning #10006: ignoring unknown option '-fdebug-prefix-map=/dev/shm/check/check-0.10.0=.'
+Front end time                       0.11 (CPU)       0.00 (elapsed)
+Back end time                        0.02 (CPU)       0.00 (elapsed)
+Total compilation time               0.13 (CPU)       0.00 (elapsed)
+ccache icc -DHAVE_CONFIG_H -I. -I../../tests -I..  -I../src -I../../src -Wdate-time -D_FORTIFY_SOURCE=2 -DTIMEOUT_TESTS_ENABLED=0 -DMEMORY_LEAKING_TESTS_ENABLED=0 -g -O2 -fdebug-prefix-map=/dev/shm/check/check-0.10.0=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -c -o check_mem_leaks-check_check_exit.o `test -f 'check_check_exit.c' || echo '../../tests/'`check_check_exit.c
+icc: command line warning #10006: ignoring unknown option '-fdebug-prefix-map=/dev/shm/check/check-0.10.0=.'
+Front end time                       0.11 (CPU)       0.00 (elapsed)
+Back end time                        0.01 (CPU)       0.00 (elapsed)
+Total compilation time               0.12 (CPU)       0.00 (elapsed)
+ccache icc -DHAVE_CONFIG_H -I. -I../../tests -I..  -I../src -I../../src -Wdate-time -D_FORTIFY_SOURCE=2 -DTIMEOUT_TESTS_ENABLED=0 -DMEMORY_LEAKING_TESTS_ENABLED=0 -g -O2 -fdebug-prefix-map=/dev/shm/check/check-0.10.0=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -c -o check_mem_leaks-check_check_selective.o `test -f 'check_check_selective.c' || echo '../../tests/'`check_check_selective.c
+icc: command line warning #10006: ignoring unknown option '-fdebug-prefix-map=/dev/shm/check/check-0.10.0=.'
+Front end time                       0.11 (CPU)       0.00 (elapsed)
+Back end time                        0.03 (CPU)       0.00 (elapsed)
+Total compilation time               0.14 (CPU)       0.00 (elapsed)
+ccache icc -DHAVE_CONFIG_H -I. -I../../tests -I..  -I../src -I../../src -Wdate-time -D_FORTIFY_SOURCE=2 -DTIMEOUT_TESTS_ENABLED=0 -DMEMORY_LEAKING_TESTS_ENABLED=0 -g -O2 -fdebug-prefix-map=/dev/shm/check/check-0.10.0=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -c -o check_mem_leaks-check_check_sub.o `test -f 'check_check_sub.c' || echo '../../tests/'`check_check_sub.c
+icc: command line warning #10006: ignoring unknown option '-fdebug-prefix-map=/dev/shm/check/check-0.10.0=.'
+Front end time                       0.14 (CPU)       0.00 (elapsed)
+Back end time                        0.08 (CPU)       0.00 (elapsed)
+Total compilation time               0.23 (CPU)       0.00 (elapsed)
+ccache icc -DHAVE_CONFIG_H -I. -I../../tests -I..  -I../src -I../../src -Wdate-time -D_FORTIFY_SOURCE=2 -DTIMEOUT_TESTS_ENABLED=0 -DMEMORY_LEAKING_TESTS_ENABLED=0 -g -O2 -fdebug-prefix-map=/dev/shm/check/check-0.10.0=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -c -o check_mem_leaks-check_check_master.o `test -f 'check_check_master.c' || echo '../../tests/'`check_check_master.c
+icc: command line warning #10006: ignoring unknown option '-fdebug-prefix-map=/dev/shm/check/check-0.10.0=.'
+Front end time                       0.12 (CPU)       0.00 (elapsed)
+Back end time                        0.04 (CPU)       0.00 (elapsed)
+Total compilation time               0.15 (CPU)       0.00 (elapsed)
+/bin/bash ../libtool  --tag=CC   --mode=link ccache icc -DTIMEOUT_TESTS_ENABLED=0 -DMEMORY_LEAKING_TESTS_ENABLED=0 -g -O2 -fdebug-prefix-map=/dev/shm/check/check-0.10.0=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas  -Wl,-z,relro -Wl,--as-needed,--gc-sections,--relax -o check_mem_leaks check_mem_leaks-check_mem_leaks.o check_mem_leaks-check_check_log.o check_mem_leaks-check_check_fork.o check_mem_leaks-check_check_exit.o check_mem_leaks-check_check_selective.o check_mem_leaks-check_check_sub.o check_mem_leaks-check_check_master.o ../src/libcheck.la ../lib/libcompat.la -lrt -lm 
+libtool: link: ccache icc -DTIMEOUT_TESTS_ENABLED=0 -DMEMORY_LEAKING_TESTS_ENABLED=0 -g -O2 -fdebug-prefix-map=/dev/shm/check/check-0.10.0=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -Wl,-z -Wl,relro -Wl,--as-needed -Wl,--gc-sections -Wl,--relax -o check_mem_leaks check_mem_leaks-check_mem_leaks.o check_mem_leaks-check_check_log.o check_mem_leaks-check_check_fork.o check_mem_leaks-check_check_exit.o check_mem_leaks-check_check_selective.o check_mem_leaks-check_check_sub.o check_mem_leaks-check_check_master.o  ../src/.libs/libcheck.a -lsubunit ../lib/.libs/libcompat.a -lrt -lm
+icc: command line warning #10006: ignoring unknown option '-fdebug-prefix-map=/dev/shm/check/check-0.10.0=.'
+ipo: remark #11000: performing multi-file optimizations
+ipo: remark #11006: generating object file /tmp/ipo_iccDg8TDy.o
+ccache icc -DHAVE_CONFIG_H -I. -I../../tests -I..  -I../src -I../../src -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/dev/shm/check/check-0.10.0=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -c -o ex_output.o ../../tests/ex_output.c
+icc: command line warning #10006: ignoring unknown option '-fdebug-prefix-map=/dev/shm/check/check-0.10.0=.'
+Front end time                       0.11 (CPU)       0.00 (elapsed)
+Back end time                        0.02 (CPU)       0.00 (elapsed)
+Total compilation time               0.13 (CPU)       0.00 (elapsed)
+/bin/bash ../libtool  --tag=CC   --mode=link ccache icc  -g -O2 -fdebug-prefix-map=/dev/shm/check/check-0.10.0=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas  -Wl,-z,relro -Wl,--as-needed,--gc-sections,--relax -o ex_output ex_output.o ../src/libcheck.la ../lib/libcompat.la -lrt -lm 
+libtool: link: ccache icc -g -O2 -fdebug-prefix-map=/dev/shm/check/check-0.10.0=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -Wl,-z -Wl,relro -Wl,--as-needed -Wl,--gc-sections -Wl,--relax -o ex_output ex_output.o  ../src/.libs/libcheck.a -lsubunit ../lib/.libs/libcompat.a -lrt -lm
+icc: command line warning #10006: ignoring unknown option '-fdebug-prefix-map=/dev/shm/check/check-0.10.0=.'
+ipo: remark #11000: performing multi-file optimizations
+ipo: remark #11006: generating object file /tmp/ipo_iccVp3yX6.o
+make[4]: Leaving directory '/dev/shm/check/check-0.10.0/build-standard/tests'
+make[3]: Leaving directory '/dev/shm/check/check-0.10.0/build-standard'
+make[2]: Leaving directory '/dev/shm/check/check-0.10.0/build-standard'
+dh_auto_build --builddirectory build-pic
+	cd build-pic && make -j1
+make[2]: Entering directory '/dev/shm/check/check-0.10.0/build-pic'
+make  all-recursive
+make[3]: Entering directory '/dev/shm/check/check-0.10.0/build-pic'
+Making all in lib
+make[4]: Entering directory '/dev/shm/check/check-0.10.0/build-pic/lib'
+/bin/bash ../libtool  --tag=CC   --mode=compile ccache icc -DHAVE_CONFIG_H -I. -I../../lib -I..   -Wdate-time -D_FORTIFY_SOURCE=2  -fPIC -g -O2 -fdebug-prefix-map=/dev/shm/check/check-0.10.0=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -c -o libcompat.lo ../../lib/libcompat.c
+libtool: compile:  ccache icc -DHAVE_CONFIG_H -I. -I../../lib -I.. -Wdate-time -D_FORTIFY_SOURCE=2 -fPIC -g -O2 -fdebug-prefix-map=/dev/shm/check/check-0.10.0=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -c ../../lib/libcompat.c  -fPIC -DPIC -o .libs/libcompat.o
+icc: command line warning #10006: ignoring unknown option '-fdebug-prefix-map=/dev/shm/check/check-0.10.0=.'
+Front end time                       0.09 (CPU)       0.00 (elapsed)
+Back end time                        0.01 (CPU)       0.00 (elapsed)
+Total compilation time               0.10 (CPU)       0.00 (elapsed)
+libtool: compile:  ccache icc -DHAVE_CONFIG_H -I. -I../../lib -I.. -Wdate-time -D_FORTIFY_SOURCE=2 -fPIC -g -O2 -fdebug-prefix-map=/dev/shm/check/check-0.10.0=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -c ../../lib/libcompat.c -o libcompat.o >/dev/null 2>&1
+/bin/bash ../libtool  --tag=CC   --mode=link ccache icc  -fPIC -g -O2 -fdebug-prefix-map=/dev/shm/check/check-0.10.0=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -no-undefined -Wl,-z,relro -Wl,--as-needed,--gc-sections,--relax -o libcompat.la  libcompat.lo   -lrt -lm 
+libtool: link: xiar cru .libs/libcompat.a .libs/libcompat.o 
+xiar: executing 'ar'
+ar: `u' modifier ignored since `D' is the default (see `U')
+libtool: link: ranlib .libs/libcompat.a
+libtool: link: ( cd ".libs" && rm -f "libcompat.la" && ln -s "../libcompat.la" "libcompat.la" )
+make[4]: Leaving directory '/dev/shm/check/check-0.10.0/build-pic/lib'
+Making all in src
+make[4]: Entering directory '/dev/shm/check/check-0.10.0/build-pic/src'
+/bin/bash ../libtool  --tag=CC   --mode=compile ccache icc -DHAVE_CONFIG_H -I. -I../../src -I..   -Wdate-time -D_FORTIFY_SOURCE=2  -fPIC -g -O2 -fdebug-prefix-map=/dev/shm/check/check-0.10.0=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -c -o check.lo ../../src/check.c
+libtool: compile:  ccache icc -DHAVE_CONFIG_H -I. -I../../src -I.. -Wdate-time -D_FORTIFY_SOURCE=2 -fPIC -g -O2 -fdebug-prefix-map=/dev/shm/check/check-0.10.0=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -c ../../src/check.c  -fPIC -DPIC -o .libs/check.o
+icc: command line warning #10006: ignoring unknown option '-fdebug-prefix-map=/dev/shm/check/check-0.10.0=.'
+Front end time                       0.18 (CPU)       0.00 (elapsed)
+Back end time                        0.04 (CPU)       0.00 (elapsed)
+Total compilation time               0.22 (CPU)       0.00 (elapsed)
+libtool: compile:  ccache icc -DHAVE_CONFIG_H -I. -I../../src -I.. -Wdate-time -D_FORTIFY_SOURCE=2 -fPIC -g -O2 -fdebug-prefix-map=/dev/shm/check/check-0.10.0=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -c ../../src/check.c -o check.o >/dev/null 2>&1
+/bin/bash ../libtool  --tag=CC   --mode=compile ccache icc -DHAVE_CONFIG_H -I. -I../../src -I..   -Wdate-time -D_FORTIFY_SOURCE=2  -fPIC -g -O2 -fdebug-prefix-map=/dev/shm/check/check-0.10.0=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -c -o check_error.lo ../../src/check_error.c
+libtool: compile:  ccache icc -DHAVE_CONFIG_H -I. -I../../src -I.. -Wdate-time -D_FORTIFY_SOURCE=2 -fPIC -g -O2 -fdebug-prefix-map=/dev/shm/check/check-0.10.0=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -c ../../src/check_error.c  -fPIC -DPIC -o .libs/check_error.o
+icc: command line warning #10006: ignoring unknown option '-fdebug-prefix-map=/dev/shm/check/check-0.10.0=.'
+Front end time                       0.10 (CPU)       0.00 (elapsed)
+Back end time                        0.01 (CPU)       0.00 (elapsed)
+Total compilation time               0.12 (CPU)       0.00 (elapsed)
+libtool: compile:  ccache icc -DHAVE_CONFIG_H -I. -I../../src -I.. -Wdate-time -D_FORTIFY_SOURCE=2 -fPIC -g -O2 -fdebug-prefix-map=/dev/shm/check/check-0.10.0=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -c ../../src/check_error.c -o check_error.o >/dev/null 2>&1
+/bin/bash ../libtool  --tag=CC   --mode=compile ccache icc -DHAVE_CONFIG_H -I. -I../../src -I..   -Wdate-time -D_FORTIFY_SOURCE=2  -fPIC -g -O2 -fdebug-prefix-map=/dev/shm/check/check-0.10.0=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -c -o check_list.lo ../../src/check_list.c
+libtool: compile:  ccache icc -DHAVE_CONFIG_H -I. -I../../src -I.. -Wdate-time -D_FORTIFY_SOURCE=2 -fPIC -g -O2 -fdebug-prefix-map=/dev/shm/check/check-0.10.0=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -c ../../src/check_list.c  -fPIC -DPIC -o .libs/check_list.o
+icc: command line warning #10006: ignoring unknown option '-fdebug-prefix-map=/dev/shm/check/check-0.10.0=.'
+Front end time                       0.10 (CPU)       0.00 (elapsed)
+Back end time                        0.02 (CPU)       0.00 (elapsed)
+Total compilation time               0.12 (CPU)       0.00 (elapsed)
+libtool: compile:  ccache icc -DHAVE_CONFIG_H -I. -I../../src -I.. -Wdate-time -D_FORTIFY_SOURCE=2 -fPIC -g -O2 -fdebug-prefix-map=/dev/shm/check/check-0.10.0=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -c ../../src/check_list.c -o check_list.o >/dev/null 2>&1
+/bin/bash ../libtool  --tag=CC   --mode=compile ccache icc -DHAVE_CONFIG_H -I. -I../../src -I..   -Wdate-time -D_FORTIFY_SOURCE=2  -fPIC -g -O2 -fdebug-prefix-map=/dev/shm/check/check-0.10.0=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -c -o check_log.lo ../../src/check_log.c
+libtool: compile:  ccache icc -DHAVE_CONFIG_H -I. -I../../src -I.. -Wdate-time -D_FORTIFY_SOURCE=2 -fPIC -g -O2 -fdebug-prefix-map=/dev/shm/check/check-0.10.0=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -c ../../src/check_log.c  -fPIC -DPIC -o .libs/check_log.o
+icc: command line warning #10006: ignoring unknown option '-fdebug-prefix-map=/dev/shm/check/check-0.10.0=.'
+Front end time                       0.11 (CPU)       0.00 (elapsed)
+Back end time                        0.04 (CPU)       0.00 (elapsed)
+Total compilation time               0.15 (CPU)       0.00 (elapsed)
+libtool: compile:  ccache icc -DHAVE_CONFIG_H -I. -I../../src -I.. -Wdate-time -D_FORTIFY_SOURCE=2 -fPIC -g -O2 -fdebug-prefix-map=/dev/shm/check/check-0.10.0=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -c ../../src/check_log.c -o check_log.o >/dev/null 2>&1
+/bin/bash ../libtool  --tag=CC   --mode=compile ccache icc -DHAVE_CONFIG_H -I. -I../../src -I..   -Wdate-time -D_FORTIFY_SOURCE=2  -fPIC -g -O2 -fdebug-prefix-map=/dev/shm/check/check-0.10.0=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -c -o check_msg.lo ../../src/check_msg.c
+libtool: compile:  ccache icc -DHAVE_CONFIG_H -I. -I../../src -I.. -Wdate-time -D_FORTIFY_SOURCE=2 -fPIC -g -O2 -fdebug-prefix-map=/dev/shm/check/check-0.10.0=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -c ../../src/check_msg.c  -fPIC -DPIC -o .libs/check_msg.o
+icc: command line warning #10006: ignoring unknown option '-fdebug-prefix-map=/dev/shm/check/check-0.10.0=.'
+Front end time                       0.11 (CPU)       0.00 (elapsed)
+Back end time                        0.02 (CPU)       0.00 (elapsed)
+Total compilation time               0.14 (CPU)       0.00 (elapsed)
+libtool: compile:  ccache icc -DHAVE_CONFIG_H -I. -I../../src -I.. -Wdate-time -D_FORTIFY_SOURCE=2 -fPIC -g -O2 -fdebug-prefix-map=/dev/shm/check/check-0.10.0=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -c ../../src/check_msg.c -o check_msg.o >/dev/null 2>&1
+/bin/bash ../libtool  --tag=CC   --mode=compile ccache icc -DHAVE_CONFIG_H -I. -I../../src -I..   -Wdate-time -D_FORTIFY_SOURCE=2  -fPIC -g -O2 -fdebug-prefix-map=/dev/shm/check/check-0.10.0=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -c -o check_pack.lo ../../src/check_pack.c
+libtool: compile:  ccache icc -DHAVE_CONFIG_H -I. -I../../src -I.. -Wdate-time -D_FORTIFY_SOURCE=2 -fPIC -g -O2 -fdebug-prefix-map=/dev/shm/check/check-0.10.0=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -c ../../src/check_pack.c  -fPIC -DPIC -o .libs/check_pack.o
+icc: command line warning #10006: ignoring unknown option '-fdebug-prefix-map=/dev/shm/check/check-0.10.0=.'
+Front end time                       0.11 (CPU)       0.00 (elapsed)
+Back end time                        0.03 (CPU)       0.00 (elapsed)
+Total compilation time               0.14 (CPU)       0.00 (elapsed)
+libtool: compile:  ccache icc -DHAVE_CONFIG_H -I. -I../../src -I.. -Wdate-time -D_FORTIFY_SOURCE=2 -fPIC -g -O2 -fdebug-prefix-map=/dev/shm/check/check-0.10.0=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -c ../../src/check_pack.c -o check_pack.o >/dev/null 2>&1
+/bin/bash ../libtool  --tag=CC   --mode=compile ccache icc -DHAVE_CONFIG_H -I. -I../../src -I..   -Wdate-time -D_FORTIFY_SOURCE=2  -fPIC -g -O2 -fdebug-prefix-map=/dev/shm/check/check-0.10.0=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -c -o check_print.lo ../../src/check_print.c
+libtool: compile:  ccache icc -DHAVE_CONFIG_H -I. -I../../src -I.. -Wdate-time -D_FORTIFY_SOURCE=2 -fPIC -g -O2 -fdebug-prefix-map=/dev/shm/check/check-0.10.0=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -c ../../src/check_print.c  -fPIC -DPIC -o .libs/check_print.o
+icc: command line warning #10006: ignoring unknown option '-fdebug-prefix-map=/dev/shm/check/check-0.10.0=.'
+Front end time                       0.10 (CPU)       0.00 (elapsed)
+Back end time                        0.02 (CPU)       0.00 (elapsed)
+Total compilation time               0.13 (CPU)       0.00 (elapsed)
+libtool: compile:  ccache icc -DHAVE_CONFIG_H -I. -I../../src -I.. -Wdate-time -D_FORTIFY_SOURCE=2 -fPIC -g -O2 -fdebug-prefix-map=/dev/shm/check/check-0.10.0=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -c ../../src/check_print.c -o check_print.o >/dev/null 2>&1
+/bin/bash ../libtool  --tag=CC   --mode=compile ccache icc -DHAVE_CONFIG_H -I. -I../../src -I..   -Wdate-time -D_FORTIFY_SOURCE=2  -fPIC -g -O2 -fdebug-prefix-map=/dev/shm/check/check-0.10.0=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -c -o check_run.lo ../../src/check_run.c
+libtool: compile:  ccache icc -DHAVE_CONFIG_H -I. -I../../src -I.. -Wdate-time -D_FORTIFY_SOURCE=2 -fPIC -g -O2 -fdebug-prefix-map=/dev/shm/check/check-0.10.0=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -c ../../src/check_run.c  -fPIC -DPIC -o .libs/check_run.o
+icc: command line warning #10006: ignoring unknown option '-fdebug-prefix-map=/dev/shm/check/check-0.10.0=.'
+Front end time                       0.11 (CPU)       0.00 (elapsed)
+Back end time                        0.04 (CPU)       0.00 (elapsed)
+Total compilation time               0.16 (CPU)       0.00 (elapsed)
+libtool: compile:  ccache icc -DHAVE_CONFIG_H -I. -I../../src -I.. -Wdate-time -D_FORTIFY_SOURCE=2 -fPIC -g -O2 -fdebug-prefix-map=/dev/shm/check/check-0.10.0=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -c ../../src/check_run.c -o check_run.o >/dev/null 2>&1
+/bin/bash ../libtool  --tag=CC   --mode=compile ccache icc -DHAVE_CONFIG_H -I. -I../../src -I..   -Wdate-time -D_FORTIFY_SOURCE=2  -fPIC -g -O2 -fdebug-prefix-map=/dev/shm/check/check-0.10.0=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -c -o check_str.lo ../../src/check_str.c
+libtool: compile:  ccache icc -DHAVE_CONFIG_H -I. -I../../src -I.. -Wdate-time -D_FORTIFY_SOURCE=2 -fPIC -g -O2 -fdebug-prefix-map=/dev/shm/check/check-0.10.0=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -c ../../src/check_str.c  -fPIC -DPIC -o .libs/check_str.o
+icc: command line warning #10006: ignoring unknown option '-fdebug-prefix-map=/dev/shm/check/check-0.10.0=.'
+../../src/check_str.c(40): warning #3179: deprecated conversion of string literal to char* (should be const char*)
+      exact_msg = (tr->rtype == CK_ERROR) ? "(after this point) " : "";
+                                                                  ^
+
+../../src/check_str.c(55): warning #3179: deprecated conversion of string literal to char* (should be const char*)
+      exact_msg = (tr->rtype == CK_ERROR) ? "(after this point) " : "";
+                                                                  ^
+
+Front end time                       0.10 (CPU)       0.00 (elapsed)
+Back end time                        0.02 (CPU)       0.00 (elapsed)
+Total compilation time               0.12 (CPU)       0.00 (elapsed)
+libtool: compile:  ccache icc -DHAVE_CONFIG_H -I. -I../../src -I.. -Wdate-time -D_FORTIFY_SOURCE=2 -fPIC -g -O2 -fdebug-prefix-map=/dev/shm/check/check-0.10.0=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -c ../../src/check_str.c -o check_str.o >/dev/null 2>&1
+/bin/sed -n -e 's/^..*CK_EXPORT[[:space:]][[:space:]]*\([[:alnum:]_][[:alnum:]_]*\)..*$/\1/p' ../../src/check.h.in > exported.sym
+/bin/bash ../libtool  --tag=CC   --mode=link ccache icc  -fPIC -g -O2 -fdebug-prefix-map=/dev/shm/check/check-0.10.0=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -no-undefined -export-symbols exported.sym -Wl,-z,relro -Wl,--as-needed,--gc-sections,--relax -o libcheck.la -rpath /usr/lib/x86_64-linux-gnu check.lo check_error.lo check_list.lo check_log.lo check_msg.lo check_pack.lo check_print.lo check_run.lo check_str.lo  -lsubunit ../lib/libcompat.la -lrt -lm 
+libtool: link: echo "{ global:" > .libs/libcheck.ver
+libtool: link:  cat exported.sym | sed -e "s/\(.*\)/\1;/" >> .libs/libcheck.ver
+libtool: link:  echo "local: *; };" >> .libs/libcheck.ver
+libtool: link:  ccache icc -shared  -fPIC -DPIC  .libs/check.o .libs/check_error.o .libs/check_list.o .libs/check_log.o .libs/check_msg.o .libs/check_pack.o .libs/check_print.o .libs/check_run.o .libs/check_str.o  -Wl,--whole-archive ../lib/.libs/libcompat.a -Wl,--no-whole-archive  -lsubunit -lrt -lm  -g -O2 -march=native -Wl,-z -Wl,relro -Wl,--as-needed -Wl,--gc-sections -Wl,--relax   -Wl,-soname -Wl,libcheck.so.0 -Wl,-version-script -Wl,.libs/libcheck.ver -o .libs/libcheck.so.0.0.0
+libtool: link: (cd ".libs" && rm -f "libcheck.so.0" && ln -s "libcheck.so.0.0.0" "libcheck.so.0")
+libtool: link: (cd ".libs" && rm -f "libcheck.so" && ln -s "libcheck.so.0.0.0" "libcheck.so")
+libtool: link: (cd .libs/libcheck.lax/libcompat.a && xiar x "/dev/shm/check/check-0.10.0/build-pic/src/../lib/.libs/libcompat.a")
+xiar: executing 'ar'
+xiar: executing 'ar'
+libtool: link: xiar cru .libs/libcheck.a  check.o check_error.o check_list.o check_log.o check_msg.o check_pack.o check_print.o check_run.o check_str.o  .libs/libcheck.lax/libcompat.a/libcompat.o 
+xiar: executing 'ar'
+ar: `u' modifier ignored since `D' is the default (see `U')
+libtool: link: ranlib .libs/libcheck.a
+libtool: link: rm -fr .libs/libcheck.lax
+libtool: link: ( cd ".libs" && rm -f "libcheck.la" && ln -s "../libcheck.la" "libcheck.la" )
+/bin/bash ../libtool  --tag=CC   --mode=link ccache icc  -fPIC -g -O2 -fdebug-prefix-map=/dev/shm/check/check-0.10.0=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -no-undefined -Wl,-z,relro -Wl,--as-needed,--gc-sections,--relax -o libcheckinternal.la  check.lo check_error.lo check_list.lo check_log.lo check_msg.lo check_pack.lo check_print.lo check_run.lo check_str.lo  -lsubunit ../lib/libcompat.la -lrt -lm 
+libtool: link: (cd .libs/libcheckinternal.lax/libcompat.a && xiar x "/dev/shm/check/check-0.10.0/build-pic/src/../lib/.libs/libcompat.a")
+xiar: executing 'ar'
+xiar: executing 'ar'
+libtool: link: xiar cru .libs/libcheckinternal.a .libs/check.o .libs/check_error.o .libs/check_list.o .libs/check_log.o .libs/check_msg.o .libs/check_pack.o .libs/check_print.o .libs/check_run.o .libs/check_str.o   .libs/libcheckinternal.lax/libcompat.a/libcompat.o 
+xiar: executing 'ar'
+ar: `u' modifier ignored since `D' is the default (see `U')
+libtool: link: ranlib .libs/libcheckinternal.a
+libtool: link: rm -fr .libs/libcheckinternal.lax
+libtool: link: ( cd ".libs" && rm -f "libcheckinternal.la" && ln -s "../libcheckinternal.la" "libcheckinternal.la" )
+make[4]: Leaving directory '/dev/shm/check/check-0.10.0/build-pic/src'
+Making all in doc
+make[4]: Entering directory '/dev/shm/check/check-0.10.0/build-pic/doc'
+cd ../../doc/example; \
+diff -U 100 src/money.1.h src/money.2.h | filterdiff --remove-timestamps > /dev/shm/check/check-0.10.0/build-pic/doc/money.1-2.h.diff || test $? -eq 1; \
+cd -;
+/dev/shm/check/check-0.10.0/build-pic/doc
+cd ../../doc/example; \
+diff -U 100 src/money.1.c src/money.3.c | filterdiff --remove-timestamps > /dev/shm/check/check-0.10.0/build-pic/doc/money.1-3.c.diff || test $? -eq 1; \
+cd -;
+/dev/shm/check/check-0.10.0/build-pic/doc
+cd ../../doc/example; \
+diff -U 100 src/money.3.c src/money.4.c | filterdiff --remove-timestamps > /dev/shm/check/check-0.10.0/build-pic/doc/money.3-4.c.diff || test $? -eq 1; \
+cd -;
+/dev/shm/check/check-0.10.0/build-pic/doc
+cd ../../doc/example; \
+diff -U 100 src/money.4.c src/money.5.c | filterdiff --remove-timestamps > /dev/shm/check/check-0.10.0/build-pic/doc/money.4-5.c.diff || test $? -eq 1; \
+cd -;
+/dev/shm/check/check-0.10.0/build-pic/doc
+cd ../../doc/example; \
+diff -U 100 src/money.5.c src/money.6.c | filterdiff --remove-timestamps > /dev/shm/check/check-0.10.0/build-pic/doc/money.5-6.c.diff || test $? -eq 1; \
+cd -;
+/dev/shm/check/check-0.10.0/build-pic/doc
+cd ../../doc/example; \
+diff -U 100 tests/check_money.1.c tests/check_money.2.c | filterdiff --remove-timestamps > /dev/shm/check/check-0.10.0/build-pic/doc/check_money.1-2.c.diff || test $? -eq 1; \
+cd -;
+/dev/shm/check/check-0.10.0/build-pic/doc
+cd ../../doc/example; \
+diff -U 100 tests/check_money.2.c tests/check_money.3.c | filterdiff --remove-timestamps > /dev/shm/check/check-0.10.0/build-pic/doc/check_money.2-3.c.diff || test $? -eq 1; \
+cd -;
+/dev/shm/check/check-0.10.0/build-pic/doc
+cd ../../doc/example; \
+diff -U 100 tests/check_money.3.c tests/check_money.6.c | filterdiff --remove-timestamps > /dev/shm/check/check-0.10.0/build-pic/doc/check_money.3-6.c.diff || test $? -eq 1; \
+cd -;
+/dev/shm/check/check-0.10.0/build-pic/doc
+cd ../../doc/example; \
+diff -U 100 tests/check_money.6.c tests/check_money.7.c | filterdiff --remove-timestamps > /dev/shm/check/check-0.10.0/build-pic/doc/check_money.6-7.c.diff || test $? -eq 1; \
+cd -;
+/dev/shm/check/check-0.10.0/build-pic/doc
+make[4]: Leaving directory '/dev/shm/check/check-0.10.0/build-pic/doc'
+Making all in .
+make[4]: Entering directory '/dev/shm/check/check-0.10.0/build-pic'
+make[4]: Leaving directory '/dev/shm/check/check-0.10.0/build-pic'
+Making all in checkmk
+make[4]: Entering directory '/dev/shm/check/check-0.10.0/build-pic/checkmk'
+make[4]: Nothing to be done for 'all'.
+make[4]: Leaving directory '/dev/shm/check/check-0.10.0/build-pic/checkmk'
+Making all in tests
+make[4]: Entering directory '/dev/shm/check/check-0.10.0/build-pic/tests'
+ccache icc -DHAVE_CONFIG_H -I. -I../../tests -I..  -I../src -I../../src -Wdate-time -D_FORTIFY_SOURCE=2  -fPIC -g -O2 -fdebug-prefix-map=/dev/shm/check/check-0.10.0=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -c -o check_check_export-check_check_sub.o `test -f 'check_check_sub.c' || echo '../../tests/'`check_check_sub.c
+icc: command line warning #10006: ignoring unknown option '-fdebug-prefix-map=/dev/shm/check/check-0.10.0=.'
+Front end time                       0.15 (CPU)       0.00 (elapsed)
+Back end time                        0.09 (CPU)       0.00 (elapsed)
+Total compilation time               0.25 (CPU)       0.00 (elapsed)
+ccache icc -DHAVE_CONFIG_H -I. -I../../tests -I..  -I../src -I../../src -Wdate-time -D_FORTIFY_SOURCE=2  -fPIC -g -O2 -fdebug-prefix-map=/dev/shm/check/check-0.10.0=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -c -o check_check_export-check_check_master.o `test -f 'check_check_master.c' || echo '../../tests/'`check_check_master.c
+icc: command line warning #10006: ignoring unknown option '-fdebug-prefix-map=/dev/shm/check/check-0.10.0=.'
+Front end time                       0.12 (CPU)       0.00 (elapsed)
+Back end time                        0.04 (CPU)       0.00 (elapsed)
+Total compilation time               0.16 (CPU)       1.00 (elapsed)
+ccache icc -DHAVE_CONFIG_H -I. -I../../tests -I..  -I../src -I../../src -Wdate-time -D_FORTIFY_SOURCE=2  -fPIC -g -O2 -fdebug-prefix-map=/dev/shm/check/check-0.10.0=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -c -o check_check_export-check_check_log.o `test -f 'check_check_log.c' || echo '../../tests/'`check_check_log.c
+icc: command line warning #10006: ignoring unknown option '-fdebug-prefix-map=/dev/shm/check/check-0.10.0=.'
+Front end time                       0.11 (CPU)       0.00 (elapsed)
+Back end time                        0.03 (CPU)       0.00 (elapsed)
+Total compilation time               0.14 (CPU)       0.00 (elapsed)
+ccache icc -DHAVE_CONFIG_H -I. -I../../tests -I..  -I../src -I../../src -Wdate-time -D_FORTIFY_SOURCE=2  -fPIC -g -O2 -fdebug-prefix-map=/dev/shm/check/check-0.10.0=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -c -o check_check_export-check_check_fork.o `test -f 'check_check_fork.c' || echo '../../tests/'`check_check_fork.c
+icc: command line warning #10006: ignoring unknown option '-fdebug-prefix-map=/dev/shm/check/check-0.10.0=.'
+Front end time                       0.11 (CPU)       0.00 (elapsed)
+Back end time                        0.02 (CPU)       0.00 (elapsed)
+Total compilation time               0.13 (CPU)       0.00 (elapsed)
+ccache icc -DHAVE_CONFIG_H -I. -I../../tests -I..  -I../src -I../../src -Wdate-time -D_FORTIFY_SOURCE=2  -fPIC -g -O2 -fdebug-prefix-map=/dev/shm/check/check-0.10.0=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -c -o check_check_export-check_check_export_main.o `test -f 'check_check_export_main.c' || echo '../../tests/'`check_check_export_main.c
+icc: command line warning #10006: ignoring unknown option '-fdebug-prefix-map=/dev/shm/check/check-0.10.0=.'
+Front end time                       0.10 (CPU)       0.00 (elapsed)
+Back end time                        0.01 (CPU)       0.00 (elapsed)
+Total compilation time               0.12 (CPU)       1.00 (elapsed)
+/bin/bash ../libtool  --tag=CC   --mode=link ccache icc  -fPIC -g -O2 -fdebug-prefix-map=/dev/shm/check/check-0.10.0=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas  -Wl,-z,relro -Wl,--as-needed,--gc-sections,--relax -o check_check_export check_check_export-check_check_sub.o check_check_export-check_check_master.o check_check_export-check_check_log.o check_check_export-check_check_fork.o check_check_export-check_check_export_main.o ../src/libcheck.la ../lib/libcompat.la -lrt -lm 
+libtool: link: ccache icc -fPIC -g -O2 -fdebug-prefix-map=/dev/shm/check/check-0.10.0=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -Wl,-z -Wl,relro -Wl,--as-needed -Wl,--gc-sections -Wl,--relax -o .libs/check_check_export check_check_export-check_check_sub.o check_check_export-check_check_master.o check_check_export-check_check_log.o check_check_export-check_check_fork.o check_check_export-check_check_export_main.o  ../src/.libs/libcheck.so ../lib/.libs/libcompat.a -lrt -lm
+icc: command line warning #10006: ignoring unknown option '-fdebug-prefix-map=/dev/shm/check/check-0.10.0=.'
+ipo: remark #11000: performing multi-file optimizations
+ipo: remark #11006: generating object file /tmp/ipo_iccOldn0a.o
+ccache icc -DHAVE_CONFIG_H -I. -I../../tests -I..  -I../src -I../../src -Wdate-time -D_FORTIFY_SOURCE=2  -fPIC -g -O2 -fdebug-prefix-map=/dev/shm/check/check-0.10.0=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -c -o check_check-check_list.o `test -f 'check_list.c' || echo '../../tests/'`check_list.c
+icc: command line warning #10006: ignoring unknown option '-fdebug-prefix-map=/dev/shm/check/check-0.10.0=.'
+Front end time                       0.11 (CPU)       0.00 (elapsed)
+Back end time                        0.02 (CPU)       0.00 (elapsed)
+Total compilation time               0.13 (CPU)       0.00 (elapsed)
+ccache icc -DHAVE_CONFIG_H -I. -I../../tests -I..  -I../src -I../../src -Wdate-time -D_FORTIFY_SOURCE=2  -fPIC -g -O2 -fdebug-prefix-map=/dev/shm/check/check-0.10.0=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -c -o check_check-check_check_sub.o `test -f 'check_check_sub.c' || echo '../../tests/'`check_check_sub.c
+icc: command line warning #10006: ignoring unknown option '-fdebug-prefix-map=/dev/shm/check/check-0.10.0=.'
+Front end time                       0.15 (CPU)       0.00 (elapsed)
+Back end time                        0.09 (CPU)       0.00 (elapsed)
+Total compilation time               0.25 (CPU)       0.00 (elapsed)
+ccache icc -DHAVE_CONFIG_H -I. -I../../tests -I..  -I../src -I../../src -Wdate-time -D_FORTIFY_SOURCE=2  -fPIC -g -O2 -fdebug-prefix-map=/dev/shm/check/check-0.10.0=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -c -o check_check-check_check_master.o `test -f 'check_check_master.c' || echo '../../tests/'`check_check_master.c
+icc: command line warning #10006: ignoring unknown option '-fdebug-prefix-map=/dev/shm/check/check-0.10.0=.'
+Front end time                       0.12 (CPU)       0.00 (elapsed)
+Back end time                        0.04 (CPU)       0.00 (elapsed)
+Total compilation time               0.16 (CPU)       1.00 (elapsed)
+ccache icc -DHAVE_CONFIG_H -I. -I../../tests -I..  -I../src -I../../src -Wdate-time -D_FORTIFY_SOURCE=2  -fPIC -g -O2 -fdebug-prefix-map=/dev/shm/check/check-0.10.0=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -c -o check_check-check_check_msg.o `test -f 'check_check_msg.c' || echo '../../tests/'`check_check_msg.c
+icc: command line warning #10006: ignoring unknown option '-fdebug-prefix-map=/dev/shm/check/check-0.10.0=.'
+Front end time                       0.11 (CPU)       0.00 (elapsed)
+Back end time                        0.02 (CPU)       0.00 (elapsed)
+Total compilation time               0.13 (CPU)       0.00 (elapsed)
+ccache icc -DHAVE_CONFIG_H -I. -I../../tests -I..  -I../src -I../../src -Wdate-time -D_FORTIFY_SOURCE=2  -fPIC -g -O2 -fdebug-prefix-map=/dev/shm/check/check-0.10.0=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -c -o check_check-check_check_log.o `test -f 'check_check_log.c' || echo '../../tests/'`check_check_log.c
+icc: command line warning #10006: ignoring unknown option '-fdebug-prefix-map=/dev/shm/check/check-0.10.0=.'
+Front end time                       0.11 (CPU)       0.00 (elapsed)
+Back end time                        0.03 (CPU)       0.00 (elapsed)
+Total compilation time               0.14 (CPU)       0.00 (elapsed)
+ccache icc -DHAVE_CONFIG_H -I. -I../../tests -I..  -I../src -I../../src -Wdate-time -D_FORTIFY_SOURCE=2  -fPIC -g -O2 -fdebug-prefix-map=/dev/shm/check/check-0.10.0=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -c -o check_check-check_check_log_internal.o `test -f 'check_check_log_internal.c' || echo '../../tests/'`check_check_log_internal.c
+icc: command line warning #10006: ignoring unknown option '-fdebug-prefix-map=/dev/shm/check/check-0.10.0=.'
+Front end time                       0.11 (CPU)       0.00 (elapsed)
+Back end time                        0.01 (CPU)       0.00 (elapsed)
+Total compilation time               0.12 (CPU)       0.00 (elapsed)
+ccache icc -DHAVE_CONFIG_H -I. -I../../tests -I..  -I../src -I../../src -Wdate-time -D_FORTIFY_SOURCE=2  -fPIC -g -O2 -fdebug-prefix-map=/dev/shm/check/check-0.10.0=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -c -o check_check-check_check_limit.o `test -f 'check_check_limit.c' || echo '../../tests/'`check_check_limit.c
+icc: command line warning #10006: ignoring unknown option '-fdebug-prefix-map=/dev/shm/check/check-0.10.0=.'
+Front end time                       0.10 (CPU)       0.00 (elapsed)
+Back end time                        0.01 (CPU)       0.00 (elapsed)
+Total compilation time               0.12 (CPU)       0.00 (elapsed)
+ccache icc -DHAVE_CONFIG_H -I. -I../../tests -I..  -I../src -I../../src -Wdate-time -D_FORTIFY_SOURCE=2  -fPIC -g -O2 -fdebug-prefix-map=/dev/shm/check/check-0.10.0=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -c -o check_check-check_check_fork.o `test -f 'check_check_fork.c' || echo '../../tests/'`check_check_fork.c
+icc: command line warning #10006: ignoring unknown option '-fdebug-prefix-map=/dev/shm/check/check-0.10.0=.'
+Front end time                       0.11 (CPU)       0.00 (elapsed)
+Back end time                        0.02 (CPU)       0.00 (elapsed)
+Total compilation time               0.13 (CPU)       0.00 (elapsed)
+ccache icc -DHAVE_CONFIG_H -I. -I../../tests -I..  -I../src -I../../src -Wdate-time -D_FORTIFY_SOURCE=2  -fPIC -g -O2 -fdebug-prefix-map=/dev/shm/check/check-0.10.0=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -c -o check_check-check_check_fixture.o `test -f 'check_check_fixture.c' || echo '../../tests/'`check_check_fixture.c
+icc: command line warning #10006: ignoring unknown option '-fdebug-prefix-map=/dev/shm/check/check-0.10.0=.'
+Front end time                       0.12 (CPU)       0.00 (elapsed)
+Back end time                        0.04 (CPU)       0.00 (elapsed)
+Total compilation time               0.17 (CPU)       0.00 (elapsed)
+ccache icc -DHAVE_CONFIG_H -I. -I../../tests -I..  -I../src -I../../src -Wdate-time -D_FORTIFY_SOURCE=2  -fPIC -g -O2 -fdebug-prefix-map=/dev/shm/check/check-0.10.0=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -c -o check_check-check_check_pack.o `test -f 'check_check_pack.c' || echo '../../tests/'`check_check_pack.c
+icc: command line warning #10006: ignoring unknown option '-fdebug-prefix-map=/dev/shm/check/check-0.10.0=.'
+../../tests/check_check_pack.c(24): warning #3179: deprecated conversion of string literal to char* (should be const char*)
+    fmsg->msg = (char *) "Hello, world!";
+                ^
+
+../../tests/check_check_pack.c(56): warning #3179: deprecated conversion of string literal to char* (should be const char*)
+    lmsg->file = (char *) "abc123.c";
+                 ^
+
+../../tests/check_check_pack.c(173): warning #3179: deprecated conversion of string literal to char* (should be const char*)
+    fmsg.msg = (char *) "";
+               ^
+
+../../tests/check_check_pack.c(198): warning #3179: deprecated conversion of string literal to char* (should be const char*)
+    lmsg.file = (char *) "";
+                ^
+
+../../tests/check_check_pack.c(227): warning #3179: deprecated conversion of string literal to char* (should be const char*)
+    lmsg.file = (char *) "abc123.c";
+                ^
+
+../../tests/check_check_pack.c(229): warning #3179: deprecated conversion of string literal to char* (should be const char*)
+    fmsg.msg = (char *) "oops";
+               ^
+
+../../tests/check_check_pack.c(267): warning #3179: deprecated conversion of string literal to char* (should be const char*)
+    lmsg.file = (char *) "abc123.c";
+                ^
+
+../../tests/check_check_pack.c(269): warning #3179: deprecated conversion of string literal to char* (should be const char*)
+    fmsg.msg = (char *) "oops";
+               ^
+
+../../tests/check_check_pack.c(324): warning #3179: deprecated conversion of string literal to char* (should be const char*)
+    lmsg.file = (char *) "abc123.c";
+                ^
+
+../../tests/check_check_pack.c(356): warning #3179: deprecated conversion of string literal to char* (should be const char*)
+    lmsg.file = (char *) "abc123.c";
+                ^
+
+Front end time                       0.12 (CPU)       0.00 (elapsed)
+Back end time                        0.04 (CPU)       0.00 (elapsed)
+Total compilation time               0.16 (CPU)       0.00 (elapsed)
+ccache icc -DHAVE_CONFIG_H -I. -I../../tests -I..  -I../src -I../../src -Wdate-time -D_FORTIFY_SOURCE=2  -fPIC -g -O2 -fdebug-prefix-map=/dev/shm/check/check-0.10.0=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -c -o check_check-check_check_exit.o `test -f 'check_check_exit.c' || echo '../../tests/'`check_check_exit.c
+icc: command line warning #10006: ignoring unknown option '-fdebug-prefix-map=/dev/shm/check/check-0.10.0=.'
+Front end time                       0.11 (CPU)       0.00 (elapsed)
+Back end time                        0.01 (CPU)       0.00 (elapsed)
+Total compilation time               0.12 (CPU)       0.00 (elapsed)
+ccache icc -DHAVE_CONFIG_H -I. -I../../tests -I..  -I../src -I../../src -Wdate-time -D_FORTIFY_SOURCE=2  -fPIC -g -O2 -fdebug-prefix-map=/dev/shm/check/check-0.10.0=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -c -o check_check-check_check_selective.o `test -f 'check_check_selective.c' || echo '../../tests/'`check_check_selective.c
+icc: command line warning #10006: ignoring unknown option '-fdebug-prefix-map=/dev/shm/check/check-0.10.0=.'
+Front end time                       0.11 (CPU)       0.00 (elapsed)
+Back end time                        0.03 (CPU)       0.00 (elapsed)
+Total compilation time               0.14 (CPU)       0.00 (elapsed)
+ccache icc -DHAVE_CONFIG_H -I. -I../../tests -I..  -I../src -I../../src -Wdate-time -D_FORTIFY_SOURCE=2  -fPIC -g -O2 -fdebug-prefix-map=/dev/shm/check/check-0.10.0=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -c -o check_check-check_check_main.o `test -f 'check_check_main.c' || echo '../../tests/'`check_check_main.c
+icc: command line warning #10006: ignoring unknown option '-fdebug-prefix-map=/dev/shm/check/check-0.10.0=.'
+Front end time                       0.11 (CPU)       0.00 (elapsed)
+Back end time                        0.01 (CPU)       0.00 (elapsed)
+Total compilation time               0.12 (CPU)       0.00 (elapsed)
+/bin/bash ../libtool  --tag=CC   --mode=link ccache icc  -fPIC -g -O2 -fdebug-prefix-map=/dev/shm/check/check-0.10.0=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas  -Wl,-z,relro -Wl,--as-needed,--gc-sections,--relax -o check_check check_check-check_list.o check_check-check_check_sub.o check_check-check_check_master.o check_check-check_check_msg.o check_check-check_check_log.o check_check-check_check_log_internal.o check_check-check_check_limit.o check_check-check_check_fork.o check_check-check_check_fixture.o check_check-check_check_pack.o check_check-check_check_exit.o check_check-check_check_selective.o check_check-check_check_main.o ../src/libcheckinternal.la ../lib/libcompat.la -lrt -lm 
+libtool: link: ccache icc -fPIC -g -O2 -fdebug-prefix-map=/dev/shm/check/check-0.10.0=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -Wl,-z -Wl,relro -Wl,--as-needed -Wl,--gc-sections -Wl,--relax -o check_check check_check-check_list.o check_check-check_check_sub.o check_check-check_check_master.o check_check-check_check_msg.o check_check-check_check_log.o check_check-check_check_log_internal.o check_check-check_check_limit.o check_check-check_check_fork.o check_check-check_check_fixture.o check_check-check_check_pack.o check_check-check_check_exit.o check_check-check_check_selective.o check_check-check_check_main.o  ../src/.libs/libcheckinternal.a -lsubunit ../lib/.libs/libcompat.a -lrt -lm
+icc: command line warning #10006: ignoring unknown option '-fdebug-prefix-map=/dev/shm/check/check-0.10.0=.'
+ipo: remark #11000: performing multi-file optimizations
+ipo: remark #11006: generating object file /tmp/ipo_icca7kUYS.o
+ccache icc -DHAVE_CONFIG_H -I. -I../../tests -I..  -I../src -I../../src -Wdate-time -D_FORTIFY_SOURCE=2  -fPIC -g -O2 -fdebug-prefix-map=/dev/shm/check/check-0.10.0=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -c -o check_stress.o ../../tests/check_stress.c
+icc: command line warning #10006: ignoring unknown option '-fdebug-prefix-map=/dev/shm/check/check-0.10.0=.'
+Front end time                       0.11 (CPU)       0.00 (elapsed)
+Back end time                        0.01 (CPU)       0.00 (elapsed)
+Total compilation time               0.12 (CPU)       0.00 (elapsed)
+/bin/bash ../libtool  --tag=CC   --mode=link ccache icc  -fPIC -g -O2 -fdebug-prefix-map=/dev/shm/check/check-0.10.0=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas  -Wl,-z,relro -Wl,--as-needed,--gc-sections,--relax -o check_stress check_stress.o ../src/libcheck.la ../lib/libcompat.la -lrt -lm 
+libtool: link: ccache icc -fPIC -g -O2 -fdebug-prefix-map=/dev/shm/check/check-0.10.0=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -Wl,-z -Wl,relro -Wl,--as-needed -Wl,--gc-sections -Wl,--relax -o .libs/check_stress check_stress.o  ../src/.libs/libcheck.so ../lib/.libs/libcompat.a -lrt -lm
+icc: command line warning #10006: ignoring unknown option '-fdebug-prefix-map=/dev/shm/check/check-0.10.0=.'
+ipo: remark #11001: performing single-file optimizations
+ipo: remark #11006: generating object file /tmp/ipo_iccty0DZg.o
+ccache icc -DHAVE_CONFIG_H -I. -I../../tests -I..  -I../src -I../../src -Wdate-time -D_FORTIFY_SOURCE=2  -fPIC -g -O2 -fdebug-prefix-map=/dev/shm/check/check-0.10.0=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -c -o check_thread_stress-check_thread_stress.o `test -f 'check_thread_stress.c' || echo '../../tests/'`check_thread_stress.c
+icc: command line warning #10006: ignoring unknown option '-fdebug-prefix-map=/dev/shm/check/check-0.10.0=.'
+Front end time                       0.11 (CPU)       1.00 (elapsed)
+Back end time                        0.01 (CPU)       0.00 (elapsed)
+Total compilation time               0.12 (CPU)       1.00 (elapsed)
+/bin/bash ../libtool  --tag=CC   --mode=link ccache icc  -fPIC -g -O2 -fdebug-prefix-map=/dev/shm/check/check-0.10.0=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas  -Wl,-z,relro -Wl,--as-needed,--gc-sections,--relax -o check_thread_stress check_thread_stress-check_thread_stress.o ../src/libcheck.la ../lib/libcompat.la  -lrt -lm 
+libtool: link: ccache icc -fPIC -g -O2 -fdebug-prefix-map=/dev/shm/check/check-0.10.0=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -Wl,-z -Wl,relro -Wl,--as-needed -Wl,--gc-sections -Wl,--relax -o .libs/check_thread_stress check_thread_stress-check_thread_stress.o  ../src/.libs/libcheck.so ../lib/.libs/libcompat.a -lrt -lm
+icc: command line warning #10006: ignoring unknown option '-fdebug-prefix-map=/dev/shm/check/check-0.10.0=.'
+ipo: remark #11001: performing single-file optimizations
+ipo: remark #11006: generating object file /tmp/ipo_iccA5mVxs.o
+ccache icc -DHAVE_CONFIG_H -I. -I../../tests -I..  -I../src -I../../src -Wdate-time -D_FORTIFY_SOURCE=2  -fPIC -g -O2 -fdebug-prefix-map=/dev/shm/check/check-0.10.0=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -c -o check_nofork.o ../../tests/check_nofork.c
+icc: command line warning #10006: ignoring unknown option '-fdebug-prefix-map=/dev/shm/check/check-0.10.0=.'
+Front end time                       0.10 (CPU)       1.00 (elapsed)
+Back end time                        0.01 (CPU)       0.00 (elapsed)
+Total compilation time               0.12 (CPU)       1.00 (elapsed)
+/bin/bash ../libtool  --tag=CC   --mode=link ccache icc  -fPIC -g -O2 -fdebug-prefix-map=/dev/shm/check/check-0.10.0=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas  -Wl,-z,relro -Wl,--as-needed,--gc-sections,--relax -o check_nofork check_nofork.o ../src/libcheck.la ../lib/libcompat.la -lrt -lm 
+libtool: link: ccache icc -fPIC -g -O2 -fdebug-prefix-map=/dev/shm/check/check-0.10.0=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -Wl,-z -Wl,relro -Wl,--as-needed -Wl,--gc-sections -Wl,--relax -o .libs/check_nofork check_nofork.o  ../src/.libs/libcheck.so ../lib/.libs/libcompat.a -lrt -lm
+icc: command line warning #10006: ignoring unknown option '-fdebug-prefix-map=/dev/shm/check/check-0.10.0=.'
+ipo: remark #11001: performing single-file optimizations
+ipo: remark #11006: generating object file /tmp/ipo_icc9lGMMI.o
+ccache icc -DHAVE_CONFIG_H -I. -I../../tests -I..  -I../src -I../../src -Wdate-time -D_FORTIFY_SOURCE=2  -fPIC -g -O2 -fdebug-prefix-map=/dev/shm/check/check-0.10.0=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -c -o check_nofork_teardown.o ../../tests/check_nofork_teardown.c
+icc: command line warning #10006: ignoring unknown option '-fdebug-prefix-map=/dev/shm/check/check-0.10.0=.'
+Front end time                       0.10 (CPU)       1.00 (elapsed)
+Back end time                        0.01 (CPU)       0.00 (elapsed)
+Total compilation time               0.12 (CPU)       1.00 (elapsed)
+/bin/bash ../libtool  --tag=CC   --mode=link ccache icc  -fPIC -g -O2 -fdebug-prefix-map=/dev/shm/check/check-0.10.0=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas  -Wl,-z,relro -Wl,--as-needed,--gc-sections,--relax -o check_nofork_teardown check_nofork_teardown.o ../src/libcheck.la ../lib/libcompat.la -lrt -lm 
+libtool: link: ccache icc -fPIC -g -O2 -fdebug-prefix-map=/dev/shm/check/check-0.10.0=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -Wl,-z -Wl,relro -Wl,--as-needed -Wl,--gc-sections -Wl,--relax -o .libs/check_nofork_teardown check_nofork_teardown.o  ../src/.libs/libcheck.so ../lib/.libs/libcompat.a -lrt -lm
+icc: command line warning #10006: ignoring unknown option '-fdebug-prefix-map=/dev/shm/check/check-0.10.0=.'
+ipo: remark #11001: performing single-file optimizations
+ipo: remark #11006: generating object file /tmp/ipo_iccgktHKQ.o
+ccache icc -DHAVE_CONFIG_H -I. -I../../tests -I..  -I../src -I../../src -Wdate-time -D_FORTIFY_SOURCE=2 -DTIMEOUT_TESTS_ENABLED=0 -DMEMORY_LEAKING_TESTS_ENABLED=0 -fPIC -g -O2 -fdebug-prefix-map=/dev/shm/check/check-0.10.0=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -c -o check_mem_leaks-check_mem_leaks.o `test -f 'check_mem_leaks.c' || echo '../../tests/'`check_mem_leaks.c
+icc: command line warning #10006: ignoring unknown option '-fdebug-prefix-map=/dev/shm/check/check-0.10.0=.'
+../../tests/check_mem_leaks.c(15): warning #2959: function prototype is missing the argument types
+  int main ()
+      ^
+
+Front end time                       0.06 (CPU)       0.00 (elapsed)
+Back end time                        0.01 (CPU)       0.00 (elapsed)
+Total compilation time               0.07 (CPU)       0.00 (elapsed)
+ccache icc -DHAVE_CONFIG_H -I. -I../../tests -I..  -I../src -I../../src -Wdate-time -D_FORTIFY_SOURCE=2 -DTIMEOUT_TESTS_ENABLED=0 -DMEMORY_LEAKING_TESTS_ENABLED=0 -fPIC -g -O2 -fdebug-prefix-map=/dev/shm/check/check-0.10.0=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -c -o check_mem_leaks-check_check_log.o `test -f 'check_check_log.c' || echo '../../tests/'`check_check_log.c
+icc: command line warning #10006: ignoring unknown option '-fdebug-prefix-map=/dev/shm/check/check-0.10.0=.'
+Front end time                       0.11 (CPU)       0.00 (elapsed)
+Back end time                        0.03 (CPU)       0.00 (elapsed)
+Total compilation time               0.14 (CPU)       0.00 (elapsed)
+ccache icc -DHAVE_CONFIG_H -I. -I../../tests -I..  -I../src -I../../src -Wdate-time -D_FORTIFY_SOURCE=2 -DTIMEOUT_TESTS_ENABLED=0 -DMEMORY_LEAKING_TESTS_ENABLED=0 -fPIC -g -O2 -fdebug-prefix-map=/dev/shm/check/check-0.10.0=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -c -o check_mem_leaks-check_check_fork.o `test -f 'check_check_fork.c' || echo '../../tests/'`check_check_fork.c
+icc: command line warning #10006: ignoring unknown option '-fdebug-prefix-map=/dev/shm/check/check-0.10.0=.'
+Front end time                       0.11 (CPU)       0.00 (elapsed)
+Back end time                        0.02 (CPU)       0.00 (elapsed)
+Total compilation time               0.13 (CPU)       0.00 (elapsed)
+ccache icc -DHAVE_CONFIG_H -I. -I../../tests -I..  -I../src -I../../src -Wdate-time -D_FORTIFY_SOURCE=2 -DTIMEOUT_TESTS_ENABLED=0 -DMEMORY_LEAKING_TESTS_ENABLED=0 -fPIC -g -O2 -fdebug-prefix-map=/dev/shm/check/check-0.10.0=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -c -o check_mem_leaks-check_check_exit.o `test -f 'check_check_exit.c' || echo '../../tests/'`check_check_exit.c
+icc: command line warning #10006: ignoring unknown option '-fdebug-prefix-map=/dev/shm/check/check-0.10.0=.'
+Front end time                       0.11 (CPU)       0.00 (elapsed)
+Back end time                        0.01 (CPU)       0.00 (elapsed)
+Total compilation time               0.12 (CPU)       0.00 (elapsed)
+ccache icc -DHAVE_CONFIG_H -I. -I../../tests -I..  -I../src -I../../src -Wdate-time -D_FORTIFY_SOURCE=2 -DTIMEOUT_TESTS_ENABLED=0 -DMEMORY_LEAKING_TESTS_ENABLED=0 -fPIC -g -O2 -fdebug-prefix-map=/dev/shm/check/check-0.10.0=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -c -o check_mem_leaks-check_check_selective.o `test -f 'check_check_selective.c' || echo '../../tests/'`check_check_selective.c
+icc: command line warning #10006: ignoring unknown option '-fdebug-prefix-map=/dev/shm/check/check-0.10.0=.'
+Front end time                       0.11 (CPU)       0.00 (elapsed)
+Back end time                        0.03 (CPU)       0.00 (elapsed)
+Total compilation time               0.14 (CPU)       0.00 (elapsed)
+ccache icc -DHAVE_CONFIG_H -I. -I../../tests -I..  -I../src -I../../src -Wdate-time -D_FORTIFY_SOURCE=2 -DTIMEOUT_TESTS_ENABLED=0 -DMEMORY_LEAKING_TESTS_ENABLED=0 -fPIC -g -O2 -fdebug-prefix-map=/dev/shm/check/check-0.10.0=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -c -o check_mem_leaks-check_check_sub.o `test -f 'check_check_sub.c' || echo '../../tests/'`check_check_sub.c
+icc: command line warning #10006: ignoring unknown option '-fdebug-prefix-map=/dev/shm/check/check-0.10.0=.'
+Front end time                       0.14 (CPU)       1.00 (elapsed)
+Back end time                        0.08 (CPU)       0.00 (elapsed)
+Total compilation time               0.23 (CPU)       1.00 (elapsed)
+ccache icc -DHAVE_CONFIG_H -I. -I../../tests -I..  -I../src -I../../src -Wdate-time -D_FORTIFY_SOURCE=2 -DTIMEOUT_TESTS_ENABLED=0 -DMEMORY_LEAKING_TESTS_ENABLED=0 -fPIC -g -O2 -fdebug-prefix-map=/dev/shm/check/check-0.10.0=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -c -o check_mem_leaks-check_check_master.o `test -f 'check_check_master.c' || echo '../../tests/'`check_check_master.c
+icc: command line warning #10006: ignoring unknown option '-fdebug-prefix-map=/dev/shm/check/check-0.10.0=.'
+Front end time                       0.12 (CPU)       0.00 (elapsed)
+Back end time                        0.04 (CPU)       0.00 (elapsed)
+Total compilation time               0.15 (CPU)       0.00 (elapsed)
+/bin/bash ../libtool  --tag=CC   --mode=link ccache icc -DTIMEOUT_TESTS_ENABLED=0 -DMEMORY_LEAKING_TESTS_ENABLED=0 -fPIC -g -O2 -fdebug-prefix-map=/dev/shm/check/check-0.10.0=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas  -Wl,-z,relro -Wl,--as-needed,--gc-sections,--relax -o check_mem_leaks check_mem_leaks-check_mem_leaks.o check_mem_leaks-check_check_log.o check_mem_leaks-check_check_fork.o check_mem_leaks-check_check_exit.o check_mem_leaks-check_check_selective.o check_mem_leaks-check_check_sub.o check_mem_leaks-check_check_master.o ../src/libcheck.la ../lib/libcompat.la -lrt -lm 
+libtool: link: ccache icc -DTIMEOUT_TESTS_ENABLED=0 -DMEMORY_LEAKING_TESTS_ENABLED=0 -fPIC -g -O2 -fdebug-prefix-map=/dev/shm/check/check-0.10.0=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -Wl,-z -Wl,relro -Wl,--as-needed -Wl,--gc-sections -Wl,--relax -o .libs/check_mem_leaks check_mem_leaks-check_mem_leaks.o check_mem_leaks-check_check_log.o check_mem_leaks-check_check_fork.o check_mem_leaks-check_check_exit.o check_mem_leaks-check_check_selective.o check_mem_leaks-check_check_sub.o check_mem_leaks-check_check_master.o  ../src/.libs/libcheck.so ../lib/.libs/libcompat.a -lrt -lm
+icc: command line warning #10006: ignoring unknown option '-fdebug-prefix-map=/dev/shm/check/check-0.10.0=.'
+ipo: remark #11000: performing multi-file optimizations
+ipo: remark #11006: generating object file /tmp/ipo_iccyalbnF.o
+ccache icc -DHAVE_CONFIG_H -I. -I../../tests -I..  -I../src -I../../src -Wdate-time -D_FORTIFY_SOURCE=2  -fPIC -g -O2 -fdebug-prefix-map=/dev/shm/check/check-0.10.0=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -c -o ex_output.o ../../tests/ex_output.c
+icc: command line warning #10006: ignoring unknown option '-fdebug-prefix-map=/dev/shm/check/check-0.10.0=.'
+Front end time                       0.11 (CPU)       0.00 (elapsed)
+Back end time                        0.02 (CPU)       0.00 (elapsed)
+Total compilation time               0.13 (CPU)       0.00 (elapsed)
+/bin/bash ../libtool  --tag=CC   --mode=link ccache icc  -fPIC -g -O2 -fdebug-prefix-map=/dev/shm/check/check-0.10.0=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas  -Wl,-z,relro -Wl,--as-needed,--gc-sections,--relax -o ex_output ex_output.o ../src/libcheck.la ../lib/libcompat.la -lrt -lm 
+libtool: link: ccache icc -fPIC -g -O2 -fdebug-prefix-map=/dev/shm/check/check-0.10.0=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -Wimport -Wfatal-errors -Wformat=2 -Winit-self -Wmissing-include-dirs -Wswitch-default -Wunknown-pragmas -Wl,-z -Wl,relro -Wl,--as-needed -Wl,--gc-sections -Wl,--relax -o .libs/ex_output ex_output.o  ../src/.libs/libcheck.so ../lib/.libs/libcompat.a -lrt -lm
+icc: command line warning #10006: ignoring unknown option '-fdebug-prefix-map=/dev/shm/check/check-0.10.0=.'
+ipo: remark #11001: performing single-file optimizations
+ipo: remark #11006: generating object file /tmp/ipo_iccSp0gxC.o
+make[4]: Leaving directory '/dev/shm/check/check-0.10.0/build-pic/tests'
+make[3]: Leaving directory '/dev/shm/check/check-0.10.0/build-pic'
+make[2]: Leaving directory '/dev/shm/check/check-0.10.0/build-pic'
+make[1]: Leaving directory '/dev/shm/check/check-0.10.0'
+ fakeroot debian/rules binary
+dh binary --buildsystem=autoconf --with autoreconf
+   dh_testroot -O--buildsystem=autoconf
+   dh_prep -O--buildsystem=autoconf
+   dh_installdirs -O--buildsystem=autoconf
+   debian/rules override_dh_auto_install
+make[1]: Entering directory '/dev/shm/check/check-0.10.0'
+dh_auto_install --builddirectory build-standard
+	cd build-standard && make -j1 install DESTDIR=/dev/shm/check/check-0.10.0/debian/check AM_UPDATE_INFO_DIR=no
+make[2]: Entering directory '/dev/shm/check/check-0.10.0/build-standard'
+Making install in lib
+make[3]: Entering directory '/dev/shm/check/check-0.10.0/build-standard/lib'
+make[4]: Entering directory '/dev/shm/check/check-0.10.0/build-standard/lib'
+make[4]: Nothing to be done for 'install-exec-am'.
+make[4]: Nothing to be done for 'install-data-am'.
+make[4]: Leaving directory '/dev/shm/check/check-0.10.0/build-standard/lib'
+make[3]: Leaving directory '/dev/shm/check/check-0.10.0/build-standard/lib'
+Making install in src
+make[3]: Entering directory '/dev/shm/check/check-0.10.0/build-standard/src'
+make[4]: Entering directory '/dev/shm/check/check-0.10.0/build-standard/src'
+ /bin/mkdir -p '/dev/shm/check/check-0.10.0/debian/check/usr/lib/x86_64-linux-gnu'
+ /bin/bash ../libtool   --mode=install /usr/bin/install -c   libcheck.la '/dev/shm/check/check-0.10.0/debian/check/usr/lib/x86_64-linux-gnu'
+libtool: install: /usr/bin/install -c .libs/libcheck.lai /dev/shm/check/check-0.10.0/debian/check/usr/lib/x86_64-linux-gnu/libcheck.la
+libtool: install: /usr/bin/install -c .libs/libcheck.a /dev/shm/check/check-0.10.0/debian/check/usr/lib/x86_64-linux-gnu/libcheck.a
+libtool: install: chmod 644 /dev/shm/check/check-0.10.0/debian/check/usr/lib/x86_64-linux-gnu/libcheck.a
+libtool: install: x86_64-linux-gnu-ranlib /dev/shm/check/check-0.10.0/debian/check/usr/lib/x86_64-linux-gnu/libcheck.a
+libtool: warning: remember to run 'libtool --finish /usr/lib/x86_64-linux-gnu'
+ /bin/mkdir -p '/dev/shm/check/check-0.10.0/debian/check/usr/include'
+ /usr/bin/install -c -m 644 check.h '/dev/shm/check/check-0.10.0/debian/check/usr/include'
+make[4]: Leaving directory '/dev/shm/check/check-0.10.0/build-standard/src'
+make[3]: Leaving directory '/dev/shm/check/check-0.10.0/build-standard/src'
+Making install in doc
+make[3]: Entering directory '/dev/shm/check/check-0.10.0/build-standard/doc'
+make[4]: Entering directory '/dev/shm/check/check-0.10.0/build-standard/doc'
+make[4]: Nothing to be done for 'install-exec-am'.
+ /bin/mkdir -p '/dev/shm/check/check-0.10.0/debian/check/usr/share/doc/check/example'
+ /usr/bin/install -c -m 644 ../../doc/example/Makefile.am ../../doc/example/README ../../doc/example/configure.ac '/dev/shm/check/check-0.10.0/debian/check/usr/share/doc/check/example'
+ /bin/mkdir -p '/dev/shm/check/check-0.10.0/debian/check/usr/share/doc/check/example/src'
+ /usr/bin/install -c -m 644 ../../doc/example/src/Makefile.am ../../doc/example/src/main.c ../../doc/example/src/money.c ../../doc/example/src/money.h ../../doc/example/src/money.1.h ../../doc/example/src/money.2.h ../../doc/example/src/money.1.c ../../doc/example/src/money.3.c ../../doc/example/src/money.4.c ../../doc/example/src/money.5.c ../../doc/example/src/money.6.c '/dev/shm/check/check-0.10.0/debian/check/usr/share/doc/check/example/src'
+ /bin/mkdir -p '/dev/shm/check/check-0.10.0/debian/check/usr/share/doc/check/example/tests'
+ /usr/bin/install -c -m 644 ../../doc/example/tests/Makefile.am ../../doc/example/tests/check_money.c ../../doc/example/tests/check_money.1.c ../../doc/example/tests/check_money.2.c ../../doc/example/tests/check_money.3.c ../../doc/example/tests/check_money.6.c ../../doc/example/tests/check_money.7.c '/dev/shm/check/check-0.10.0/debian/check/usr/share/doc/check/example/tests'
+ /bin/mkdir -p '/dev/shm/check/check-0.10.0/debian/check/usr/share/info'
+ /usr/bin/install -c -m 644 ../../doc/check.info '/dev/shm/check/check-0.10.0/debian/check/usr/share/info'
+make[4]: Leaving directory '/dev/shm/check/check-0.10.0/build-standard/doc'
+make[3]: Leaving directory '/dev/shm/check/check-0.10.0/build-standard/doc'
+Making install in .
+make[3]: Entering directory '/dev/shm/check/check-0.10.0/build-standard'
+make[4]: Entering directory '/dev/shm/check/check-0.10.0/build-standard'
+make[4]: Nothing to be done for 'install-exec-am'.
+ /bin/mkdir -p '/dev/shm/check/check-0.10.0/debian/check/usr/share/doc/check'
+ /usr/bin/install -c -m 644 ../SVNChangeLog ../ChangeLog ../ChangeLogOld ../NEWS ../README ../COPYING.LESSER '/dev/shm/check/check-0.10.0/debian/check/usr/share/doc/check'
+ /bin/mkdir -p '/dev/shm/check/check-0.10.0/debian/check/usr/include'
+ /usr/bin/install -c -m 644 check_stdint.h '/dev/shm/check/check-0.10.0/debian/check/usr/include'
+ /bin/mkdir -p '/dev/shm/check/check-0.10.0/debian/check/usr/share/aclocal'
+ /usr/bin/install -c -m 644 ../check.m4 '/dev/shm/check/check-0.10.0/debian/check/usr/share/aclocal'
+ /bin/mkdir -p '/dev/shm/check/check-0.10.0/debian/check/usr/lib/x86_64-linux-gnu/pkgconfig'
+ /usr/bin/install -c -m 644 check.pc '/dev/shm/check/check-0.10.0/debian/check/usr/lib/x86_64-linux-gnu/pkgconfig'
+make[4]: Leaving directory '/dev/shm/check/check-0.10.0/build-standard'
+make[3]: Leaving directory '/dev/shm/check/check-0.10.0/build-standard'
+Making install in checkmk
+make[3]: Entering directory '/dev/shm/check/check-0.10.0/build-standard/checkmk'
+make[4]: Entering directory '/dev/shm/check/check-0.10.0/build-standard/checkmk'
+ /bin/mkdir -p '/dev/shm/check/check-0.10.0/debian/check/usr/bin'
+ /usr/bin/install -c checkmk '/dev/shm/check/check-0.10.0/debian/check/usr/bin'
+ /bin/mkdir -p '/dev/shm/check/check-0.10.0/debian/check/usr/share/man/man1'
+ /usr/bin/install -c -m 644 ../../checkmk/doc/checkmk.1 '/dev/shm/check/check-0.10.0/debian/check/usr/share/man/man1'
+make[4]: Leaving directory '/dev/shm/check/check-0.10.0/build-standard/checkmk'
+make[3]: Leaving directory '/dev/shm/check/check-0.10.0/build-standard/checkmk'
+Making install in tests
+make[3]: Entering directory '/dev/shm/check/check-0.10.0/build-standard/tests'
+make[4]: Entering directory '/dev/shm/check/check-0.10.0/build-standard/tests'
+make[4]: Nothing to be done for 'install-exec-am'.
+make[4]: Nothing to be done for 'install-data-am'.
+make[4]: Leaving directory '/dev/shm/check/check-0.10.0/build-standard/tests'
+make[3]: Leaving directory '/dev/shm/check/check-0.10.0/build-standard/tests'
+make[2]: Leaving directory '/dev/shm/check/check-0.10.0/build-standard'
+# fix the installation / setup
+rm -f debian/check/usr/share/doc/check/COPYING*
+sed -i '/\/\* generated using gnu compiler .*/d' debian/check/usr/include/check_stdint.h
+rm -f debian/check/usr/share/doc/check/ChangeLog
+rm -f debian/check/usr/lib/x86_64-linux-gnu/libcheck.la
+rm -f debian/check/usr/share/info/dir.gz
+rm -rf debian/check/usr/share/doc/check/example
+# install the pic library
+install build-pic/src/.libs/libcheck.a debian/check/usr/lib/x86_64-linux-gnu/libcheck_pic.a
+make[1]: Leaving directory '/dev/shm/check/check-0.10.0'
+   dh_install -O--buildsystem=autoconf
+   dh_installdocs -O--buildsystem=autoconf
+   dh_installchangelogs -O--buildsystem=autoconf
+   dh_installexamples -O--buildsystem=autoconf
+   dh_installman -O--buildsystem=autoconf
+   dh_installcatalogs -O--buildsystem=autoconf
+   dh_installcron -O--buildsystem=autoconf
+   dh_installdebconf -O--buildsystem=autoconf
+   dh_installemacsen -O--buildsystem=autoconf
+   dh_installifupdown -O--buildsystem=autoconf
+   dh_installinfo -O--buildsystem=autoconf
+   dh_installinit -O--buildsystem=autoconf
+   dh_installmenu -O--buildsystem=autoconf
+   dh_installmime -O--buildsystem=autoconf
+   dh_installmodules -O--buildsystem=autoconf
+   dh_installlogcheck -O--buildsystem=autoconf
+   dh_installlogrotate -O--buildsystem=autoconf
+   dh_installpam -O--buildsystem=autoconf
+   dh_installppp -O--buildsystem=autoconf
+   dh_installudev -O--buildsystem=autoconf
+   dh_installgsettings -O--buildsystem=autoconf
+   dh_bugfiles -O--buildsystem=autoconf
+   dh_ucf -O--buildsystem=autoconf
+   dh_lintian -O--buildsystem=autoconf
+   dh_gconf -O--buildsystem=autoconf
+dh_gconf: Please migrate to dh_installgsettings; gconf + dh_gconf is scheduled for removal.
+   dh_icons -O--buildsystem=autoconf
+   dh_perl -O--buildsystem=autoconf
+   dh_usrlocal -O--buildsystem=autoconf
+   dh_link -O--buildsystem=autoconf
+   dh_installwm -O--buildsystem=autoconf
+   dh_installxfonts -O--buildsystem=autoconf
+   dh_strip_nondeterminism -O--buildsystem=autoconf
+   dh_compress -O--buildsystem=autoconf
+   dh_fixperms -O--buildsystem=autoconf
+   dh_missing -O--buildsystem=autoconf
+   dh_strip -O--buildsystem=autoconf
+   dh_makeshlibs -O--buildsystem=autoconf
+   dh_shlibdeps -O--buildsystem=autoconf
+   dh_installdeb -O--buildsystem=autoconf
+   dh_gencontrol -O--buildsystem=autoconf
+   dh_md5sums -O--buildsystem=autoconf
+   dh_builddeb -O--buildsystem=autoconf
+dpkg-deb: building package 'check' in '../check_0.10.0-3_amd64.deb'.
+FAKEROOTKEY=1515371920 LD_LIBRARY_PATH=:/opt/intel/lib/intel64_lin:/opt/intel/tbb/lib/intel64/gcc4.7 LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libfakeroot/libfakeroot-sysv.so debian/rules binary
+ dpkg-genbuildinfo --build=binary
+ dpkg-genchanges --build=binary >../check_0.10.0-3_amd64.changes
+dpkg-genchanges: info: binary-only upload (no source code included)
+ dpkg-source --after-build .
+dpkg-buildpackage: info: binary-only upload (no source included)
+Now running lintian check_0.10.0-3_amd64.changes ...
+W: check: spelling-error-in-readme-debian P P (duplicate word) P
+Finished running lintian.

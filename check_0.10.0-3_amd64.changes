@@ -1,0 +1,30 @@
+Format: 1.8
+Date: Fri, 25 Sep 2015 18:05:46 +0200
+Source: check
+Binary: check
+Built-For-Profiles: nobiarch nocheck nodoc
+Architecture: amd64
+Version: 0.10.0-3
+Distribution: unstable
+Urgency: medium
+Maintainer: Robert Lemmen <robertle@semistable.com>
+Changed-By: Tobias Frost <tobi@debian.org>
+Description:
+ check      - unit test framework for C
+Closes: 799991
+Changes:
+ check (0.10.0-3) unstable; urgency=medium
+ .
+   * Team upload.
+   * Add PTHREAD_CFLAGS to the pkg-config file to hint the linker to use lpthread
+     (Closes: #799991)
+   * Added support for DEB_BUILD_OPTIONS=nocheck.
+Checksums-Sha1:
+ 3d6e7bb6abb212b90e1b334eb0b4367e18134569 5537 check_0.10.0-3_amd64.buildinfo
+ ddb2bf88b1ea23de9a6b9f199486701f2346cbf5 398052 check_0.10.0-3_amd64.deb
+Checksums-Sha256:
+ b024a3c384acf2996db1e04fc2e1e50e0244b9d1401275d5219a100aed0ed659 5537 check_0.10.0-3_amd64.buildinfo
+ 56f6fdd4bf3df46f1a30f25b5c67d14b3dd68d37629809e865f89925da1215d9 398052 check_0.10.0-3_amd64.deb
+Files:
+ b04e4199e309214ce7e8428302571271 5537 devel optional check_0.10.0-3_amd64.buildinfo
+ cdb3b1fd8051def812e74b4a20a46117 398052 devel optional check_0.10.0-3_amd64.deb

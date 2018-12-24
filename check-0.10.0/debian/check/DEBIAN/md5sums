@@ -1,0 +1,17 @@
+388761b7d14fb8e9ce35aeb1c1f3489d  usr/bin/checkmk
+1bb0edf20af0969f0138f7eb45d45dfd  usr/include/check.h
+5e7bd294ca0590047816d875710bfc2e  usr/include/check_stdint.h
+96fa0ed8120e73a030112236cb5b6e81  usr/lib/x86_64-linux-gnu/libcheck.a
+1a3849d7ea95aec8cbb3805ee1d682b5  usr/lib/x86_64-linux-gnu/libcheck_pic.a
+afe1f8cfb0779f872780c8b33f3bc73e  usr/lib/x86_64-linux-gnu/pkgconfig/check.pc
+48f1287cc6e00523bd7a921ecb22949c  usr/share/aclocal/check.m4
+6b77269f554dd899b7162cb0129d50b3  usr/share/doc/check/ChangeLogOld
+7074fa162780b0fd48ddbd0e01304359  usr/share/doc/check/NEWS.gz
+dceedf87b98851c424d732cc86080bd4  usr/share/doc/check/README
+38f1ef29d819eecc05e1033449319f85  usr/share/doc/check/README.Debian
+ff3689a08f3e5e51d3f3e88bc6f03a42  usr/share/doc/check/SVNChangeLog.gz
+475ba2b19f70bbf2f49b49e61e9c58d2  usr/share/doc/check/changelog.Debian.gz
+348fae34e4731c5154c12277133a8a5e  usr/share/doc/check/changelog.gz
+af0c38711e5401455131d2e4fb7527aa  usr/share/doc/check/copyright
+30062375c7f2c6593d2c4fe5293e30c6  usr/share/info/check.info.gz
+5eb21c47b48c898d735286fb7510ed60  usr/share/man/man1/checkmk.1.gz
